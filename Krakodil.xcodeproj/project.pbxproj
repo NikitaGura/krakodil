@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21122CD625332A120084F812 /* SocketAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21122CD525332A120084F812 /* SocketAPI.swift */; };
+		21122CDA25332D650084F812 /* SocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21122CD925332D650084F812 /* SocketProvider.swift */; };
+		21122CDE253340560084F812 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21122CDD253340560084F812 /* Point.swift */; };
+		216BE41624FAB10F00C16813 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216BE41524FAB10F00C16813 /* Main.storyboard */; };
+		216BE41824FAB66600C16813 /* SettingsDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216BE41724FAB66600C16813 /* SettingsDrawerViewController.swift */; };
+		216BE41B24FAB72B00C16813 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216BE41A24FAB72B00C16813 /* Storyboarded.swift */; };
+		216BE42124FABB8D00C16813 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216BE41F24FABB8D00C16813 /* ColorCollectionViewCell.swift */; };
+		216BE42224FABB8D00C16813 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216BE42024FABB8D00C16813 /* ColorCollectionViewCell.xib */; };
+		216BE42524FADCA200C16813 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216BE42424FADCA200C16813 /* Line.swift */; };
+		219847912371C6240044518C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219847902371C6240044518C /* AppDelegate.swift */; };
+		219847952371C6240044518C /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219847942371C6240044518C /* DrawingViewController.swift */; };
+		2198479A2371C6260044518C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219847992371C6260044518C /* Assets.xcassets */; };
+		2198479D2371C6260044518C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2198479B2371C6260044518C /* LaunchScreen.storyboard */; };
+		219847A62371C6E30044518C /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219847A52371C6E30044518C /* Canvas.swift */; };
+		219847AC2371CCE80044518C /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219847AB2371CCE80044518C /* colors.xcassets */; };
+		219847AE2371CD380044518C /* ColorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219847AD2371CD380044518C /* ColorApp.swift */; };
+		21A18A1725499E1B00A1681A /* Naming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A18A1625499E1B00A1681A /* Naming.swift */; };
+		21A18A1A2549BEDC00A1681A /* CleanBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A18A192549BEDC00A1681A /* CleanBool.swift */; };
+		21DD2F93252F06CC0045EEE4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD2F92252F06CC0045EEE4 /* Strings.swift */; };
+		21DD2F95252F07C30045EEE4 /* CellNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD2F94252F07C30045EEE4 /* CellNames.swift */; };
+		2CF8295DEFA4C4A31B40EDB9 /* Pods_Krakodil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C76B514F8EEA4B6A1A9640A /* Pods-Krakodil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krakodil.release.xcconfig"; path = "Target Support Files/Pods-Krakodil/Pods-Krakodil.release.xcconfig"; sourceTree = "<group>"; };
+		21122CD525332A120084F812 /* SocketAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketAPI.swift; sourceTree = "<group>"; };
+		21122CD925332D650084F812 /* SocketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProvider.swift; sourceTree = "<group>"; };
+		21122CDD253340560084F812 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		216BE41524FAB10F00C16813 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		216BE41724FAB66600C16813 /* SettingsDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDrawerViewController.swift; sourceTree = "<group>"; };
+		216BE41A24FAB72B00C16813 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		216BE41F24FABB8D00C16813 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		216BE42024FABB8D00C16813 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
+		216BE42424FADCA200C16813 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		2198478D2371C6240044518C /* Krakodil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krakodil.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		219847902371C6240044518C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		219847942371C6240044518C /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		219847992371C6260044518C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2198479C2371C6260044518C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2198479E2371C6260044518C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		219847A52371C6E30044518C /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		219847AB2371CCE80044518C /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
+		219847AD2371CD380044518C /* ColorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorApp.swift; sourceTree = "<group>"; };
+		21A18A1625499E1B00A1681A /* Naming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Naming.swift; sourceTree = "<group>"; };
+		21A18A192549BEDC00A1681A /* CleanBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanBool.swift; sourceTree = "<group>"; };
+		21DD2F92252F06CC0045EEE4 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		21DD2F94252F07C30045EEE4 /* CellNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNames.swift; sourceTree = "<group>"; };
+		BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Krakodil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF349C430B4772AABDF23F76 /* Pods-Krakodil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krakodil.debug.xcconfig"; path = "Target Support Files/Pods-Krakodil/Pods-Krakodil.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2198478A2371C6240044518C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CF8295DEFA4C4A31B40EDB9 /* Pods_Krakodil.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E569AB62AC398863BB2A4F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21122CD0253329470084F812 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				21122CD925332D650084F812 /* SocketProvider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		21122CDC253340000084F812 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				21122CDD253340560084F812 /* Point.swift */,
+				21A18A192549BEDC00A1681A /* CleanBool.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		216BE41924FAB71900C16813 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				216BE41A24FAB72B00C16813 /* Storyboarded.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		216BE41C24FABB4300C16813 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				216BE41F24FABB8D00C16813 /* ColorCollectionViewCell.swift */,
+				216BE42024FABB8D00C16813 /* ColorCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		216BE42324FADC9600C16813 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21122CDC253340000084F812 /* DataModel */,
+				216BE42424FADCA200C16813 /* Line.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		219847842371C6240044518C = {
+			isa = PBXGroup;
+			children = (
+				2198478F2371C6240044518C /* Krakodil */,
+				2198478E2371C6240044518C /* Products */,
+				AC5EFAF4738A85FC9D5F2BEB /* Pods */,
+				1E569AB62AC398863BB2A4F2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2198478E2371C6240044518C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2198478D2371C6240044518C /* Krakodil.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2198478F2371C6240044518C /* Krakodil */ = {
+			isa = PBXGroup;
+			children = (
+				21122CD0253329470084F812 /* Networking */,
+				21DD2F91252F06BC0045EEE4 /* Constants */,
+				216BE42324FADC9600C16813 /* Model */,
+				216BE41C24FABB4300C16813 /* Cells */,
+				216BE41924FAB71900C16813 /* Extensions */,
+				219847A82371CCAF0044518C /* helper */,
+				219847A42371C66A0044518C /* Screens */,
+				219847902371C6240044518C /* AppDelegate.swift */,
+				219847992371C6260044518C /* Assets.xcassets */,
+				2198479B2371C6260044518C /* LaunchScreen.storyboard */,
+				2198479E2371C6260044518C /* Info.plist */,
+				216BE41524FAB10F00C16813 /* Main.storyboard */,
+			);
+			path = Krakodil;
+			sourceTree = "<group>";
+		};
+		219847A42371C66A0044518C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				219847A72371C6E90044518C /* DrawingScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		219847A72371C6E90044518C /* DrawingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				219847A52371C6E30044518C /* Canvas.swift */,
+				219847942371C6240044518C /* DrawingViewController.swift */,
+				216BE41724FAB66600C16813 /* SettingsDrawerViewController.swift */,
+			);
+			path = DrawingScreen;
+			sourceTree = "<group>";
+		};
+		219847A82371CCAF0044518C /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				219847AB2371CCE80044518C /* colors.xcassets */,
+				219847AD2371CD380044518C /* ColorApp.swift */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
+		21DD2F91252F06BC0045EEE4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				21DD2F92252F06CC0045EEE4 /* Strings.swift */,
+				21DD2F94252F07C30045EEE4 /* CellNames.swift */,
+				21122CD525332A120084F812 /* SocketAPI.swift */,
+				21A18A1625499E1B00A1681A /* Naming.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AC5EFAF4738A85FC9D5F2BEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF349C430B4772AABDF23F76 /* Pods-Krakodil.debug.xcconfig */,
+				1C76B514F8EEA4B6A1A9640A /* Pods-Krakodil.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2198478C2371C6240044518C /* Krakodil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 219847A12371C6260044518C /* Build configuration list for PBXNativeTarget "Krakodil" */;
+			buildPhases = (
+				72AEE405CD620F4B96274185 /* [CP] Check Pods Manifest.lock */,
+				219847892371C6240044518C /* Sources */,
+				2198478A2371C6240044518C /* Frameworks */,
+				2198478B2371C6240044518C /* Resources */,
+				7EE4C04986FDEAF581D5DEE9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Krakodil;
+			productName = Krakodil;
+			productReference = 2198478D2371C6240044518C /* Krakodil.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		219847852371C6240044518C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Nikita Gura";
+				TargetAttributes = {
+					2198478C2371C6240044518C = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 219847882371C6240044518C /* Build configuration list for PBXProject "Krakodil" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 219847842371C6240044518C;
+			productRefGroup = 2198478E2371C6240044518C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2198478C2371C6240044518C /* Krakodil */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2198478B2371C6240044518C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				219847AC2371CCE80044518C /* colors.xcassets in Resources */,
+				2198479D2371C6260044518C /* LaunchScreen.storyboard in Resources */,
+				2198479A2371C6260044518C /* Assets.xcassets in Resources */,
+				216BE42224FABB8D00C16813 /* ColorCollectionViewCell.xib in Resources */,
+				216BE41624FAB10F00C16813 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72AEE405CD620F4B96274185 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Krakodil-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EE4C04986FDEAF581D5DEE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Krakodil/Pods-Krakodil-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Krakodil/Pods-Krakodil-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Krakodil/Pods-Krakodil-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		219847892371C6240044518C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				219847952371C6240044518C /* DrawingViewController.swift in Sources */,
+				21DD2F93252F06CC0045EEE4 /* Strings.swift in Sources */,
+				216BE42124FABB8D00C16813 /* ColorCollectionViewCell.swift in Sources */,
+				219847AE2371CD380044518C /* ColorApp.swift in Sources */,
+				21122CDE253340560084F812 /* Point.swift in Sources */,
+				21122CD625332A120084F812 /* SocketAPI.swift in Sources */,
+				219847912371C6240044518C /* AppDelegate.swift in Sources */,
+				21A18A1A2549BEDC00A1681A /* CleanBool.swift in Sources */,
+				216BE41824FAB66600C16813 /* SettingsDrawerViewController.swift in Sources */,
+				216BE42524FADCA200C16813 /* Line.swift in Sources */,
+				219847A62371C6E30044518C /* Canvas.swift in Sources */,
+				21DD2F95252F07C30045EEE4 /* CellNames.swift in Sources */,
+				216BE41B24FAB72B00C16813 /* Storyboarded.swift in Sources */,
+				21122CDA25332D650084F812 /* SocketProvider.swift in Sources */,
+				21A18A1725499E1B00A1681A /* Naming.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2198479B2371C6260044518C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2198479C2371C6260044518C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2198479F2371C6260044518C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		219847A02371C6260044518C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		219847A22371C6260044518C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF349C430B4772AABDF23F76 /* Pods-Krakodil.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T29HC5ZR57;
+				INFOPLIST_FILE = Krakodil/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.localgangstar.Krakodil;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		219847A32371C6260044518C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C76B514F8EEA4B6A1A9640A /* Pods-Krakodil.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T29HC5ZR57;
+				INFOPLIST_FILE = Krakodil/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.localgangstar.Krakodil;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		219847882371C6240044518C /* Build configuration list for PBXProject "Krakodil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2198479F2371C6260044518C /* Debug */,
+				219847A02371C6260044518C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		219847A12371C6260044518C /* Build configuration list for PBXNativeTarget "Krakodil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				219847A22371C6260044518C /* Debug */,
+				219847A32371C6260044518C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 219847852371C6240044518C /* Project object */;
+}
