@@ -11,6 +11,8 @@ import UIKit
 
 struct Line {
     let color: UIColor
-    let widthLine: Float
+    let width: Float
     var points: [CGPoint]
 }
+
+

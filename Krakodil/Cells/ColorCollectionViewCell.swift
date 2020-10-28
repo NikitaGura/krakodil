@@ -16,7 +16,6 @@ class ColorCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-       
         containerView.layer.borderColor = UIColor.black.cgColor
         containerView.layer.cornerRadius = 25
         containerView.layer.masksToBounds = true

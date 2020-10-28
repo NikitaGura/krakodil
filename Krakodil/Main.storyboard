@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0L7-LH-dTw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0L7-LH-dTw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,18 +35,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M53-dx-Rwx" customClass="Canvas" customModule="Krakodil">
-                                <rect key="frame" x="20" y="113" width="374" height="549"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="47" y="113" width="320" height="450"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="AJr-bw-dkV"/>
+                                    <constraint firstAttribute="width" constant="320" id="LKI-Wt-hsV"/>
+                                </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="wk7-7W-gCi"/>
                         <color key="backgroundColor" red="0.31773410486924358" green="0.86557173198158466" blue="0.89952932305904254" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="wk7-7W-gCi" firstAttribute="trailing" secondItem="M53-dx-Rwx" secondAttribute="trailing" constant="20" id="bJC-DR-UHg"/>
-                            <constraint firstItem="wk7-7W-gCi" firstAttribute="bottom" secondItem="M53-dx-Rwx" secondAttribute="bottom" constant="200" id="qWE-wH-vdI"/>
+                            <constraint firstItem="M53-dx-Rwx" firstAttribute="centerX" secondItem="Hpb-hS-cYY" secondAttribute="centerX" id="qqg-fE-B7m"/>
                             <constraint firstItem="M53-dx-Rwx" firstAttribute="top" secondItem="wk7-7W-gCi" secondAttribute="top" constant="25" id="zAe-QL-TVD"/>
-                            <constraint firstItem="M53-dx-Rwx" firstAttribute="leading" secondItem="wk7-7W-gCi" secondAttribute="leading" constant="20" id="zXH-ff-CNs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wk7-7W-gCi"/>
                     </view>
                     <navigationItem key="navigationItem" id="BvI-Y1-Rb2">
                         <rightBarButtonItems>
@@ -109,9 +112,9 @@
                                             <outlet property="delegate" destination="Srj-mr-P5y" id="VsF-Mv-FbD"/>
                                         </connections>
                                     </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uil-qx-7eO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uil-qx-7eO">
                                         <rect key="frame" x="0.0" y="254" width="171.5" height="46"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="20b-Ub-fZZ"/>
                                         </constraints>
@@ -122,7 +125,7 @@
                                             <action selector="tappedCancel:" destination="Srj-mr-P5y" eventType="touchUpInside" id="58N-f5-hvi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOn-fU-n8Z">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOn-fU-n8Z">
                                         <rect key="frame" x="171.5" y="254" width="172.5" height="46"/>
                                         <color key="backgroundColor" red="0.47246192664495273" green="0.90135200777202074" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -139,7 +142,7 @@
                                         <rect key="frame" x="3" y="90" width="338" height="31"/>
                                     </slider>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="31w-eD-1WX" firstAttribute="top" secondItem="XEC-sG-ErC" secondAttribute="bottom" constant="20" id="2XV-zo-xEG"/>
                                     <constraint firstAttribute="bottom" secondItem="jOn-fU-n8Z" secondAttribute="bottom" id="2zU-MD-2J0"/>
@@ -157,13 +160,13 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bef-9i-lwO"/>
                         <color key="backgroundColor" white="0.0" alpha="0.19547755281690141" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ian-A6-EpM" firstAttribute="top" secondItem="bef-9i-lwO" secondAttribute="top" constant="30" id="WRa-ez-hee"/>
                             <constraint firstItem="bef-9i-lwO" firstAttribute="trailing" secondItem="ian-A6-EpM" secondAttribute="trailing" constant="35" id="n3C-OP-oPr"/>
                             <constraint firstItem="ian-A6-EpM" firstAttribute="leading" secondItem="bef-9i-lwO" secondAttribute="leading" constant="35" id="vK8-be-SA3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bef-9i-lwO"/>
                     </view>
                     <connections>
                         <outlet property="colorsCollecntionView" destination="XEC-sG-ErC" id="5v6-4i-evs"/>
@@ -176,7 +179,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
