@@ -15,7 +15,7 @@ class Canvas: UIView{
     var selectedWidth: Float = 5.0
     var linesPoints = [Line]()
     var socketProvider: SocketProvider?
-    
+    var room: Room!
     init () {
         super.init(frame: .zero)
     }
@@ -25,7 +25,8 @@ class Canvas: UIView{
         
     }
     
-    func setUpCanvas(){
+    func setUpCanvas(room: Room){
+        self.room = room
         socketProvider?.onDraw(completion: listenLine)
         socketProvider?.onCleanLines(completion: listenClear)
     }
@@ -68,13 +69,13 @@ class Canvas: UIView{
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let lastLine = linesPoints.last else {return}
-        socketProvider?.emitDraw(line: lastLine)
+        socketProvider?.emitDraw(line: lastLine, room: room)
     }
     
     func clear(){
         linesPoints.removeAll()
         setNeedsDisplay()
-        socketProvider?.emitCleanLines()
+        socketProvider?.emitCleanLines(room: room)
     }
     
     func listenClear(isClean: Bool){

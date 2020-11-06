@@ -18,4 +18,9 @@ struct Naming {
     static let G = "G"
     static let B = "B"
     static let isClean = "is_Clean"
+    static let room = "room"
+    static let id_room = "id_room"
+    static let name = "name"
+    static let id_device = "id_device"
+    static let user = "user"
 }

@@ -19,15 +19,36 @@ public class SocketProvider{
         socket.connect()
     }
     
-    func emitDraw(line: Line){
+    func emitJoinToRoom(room: Room){
+        let deviceId = UIDevice.current.identifierForVendor?.uuidString
+        if let nickName =  UserDefaults.standard.string(forKey: UserDefaultsNames.user_name){
+            socket.emit(SocketAPI.event_user_join_to_room, [
+                            Naming.room: [Naming.id_room: room.id_room],
+                            Naming.user: [Naming.name: nickName, Naming.id_device: deviceId]
+            ])
+        }
+    }
+    
+    func emitLeaveRoom(room: Room){
+        let deviceId = UIDevice.current.identifierForVendor?.uuidString
+        if let nickName =  UserDefaults.standard.string(forKey: UserDefaultsNames.user_name){
+            socket.emit(SocketAPI.event_user_disconnect_from_room, [
+                            Naming.room: [Naming.id_room: room.id_room],
+                            Naming.user: [Naming.name: nickName, Naming.id_device: deviceId]
+            ])
+        }
+    }
+    
+    func emitDraw(line: Line, room: Room){
         let points = line.points.map({[Naming.x :$0.x, Naming.y: $0.y]})
         socket.emit(SocketAPI.eventDraw, [Naming.points :points,
                                           Naming.colorLine: line.color.rgbJSON(),
-                                          Naming.widthLine: line.width ])
+                                          Naming.widthLine: line.width,
+                                          Naming.id_room: room.id_room])
     }
     
-    func emitCleanLines(){
-        socket.emit(SocketAPI.eventCleanLines,[Naming.isClean: true])
+    func emitCleanLines(room: Room){
+        socket.emit(SocketAPI.eventCleanLines,[Naming.isClean: true, Naming.id_room: room.id_room])
     }
     
     func onCleanLines(completion: @escaping  (_ isClean: Bool)->()){

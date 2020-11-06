@@ -10,14 +10,21 @@ import UIKit
 
 
 
-class DrawingViewController: UIViewController {
+class DrawingViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var canvasView: Canvas!
-    var socketProvider: SocketProvider = SocketProvider()
+    var socketProvider: SocketProvider!
+    var room: Room!
     override func viewDidLoad() {
         super.viewDidLoad()
         canvasView.socketProvider = socketProvider
-        canvasView.setUpCanvas()
+        socketProvider.emitJoinToRoom(room: room)
+        canvasView.setUpCanvas(room: room)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        socketProvider.emitLeaveRoom(room: room)
     }
     
     @IBAction func tapedSettingDraw(_ sender: Any) {
