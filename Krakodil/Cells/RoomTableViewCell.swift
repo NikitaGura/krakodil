@@ -18,6 +18,7 @@ class RoomTableViewCell: UITableViewCell {
     var room: Room?{
         didSet{
             name.text = room?.name
+            userCount.text = "\(room?.room_users?.count ?? 0)/8"
         }
     }
     

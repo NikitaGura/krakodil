@@ -51,7 +51,7 @@ class RoomsViewController: UIViewController, Storyboarded{
         alert.addAction(UIAlertAction(title: Strings.GENERAL_YES, style: .default) {_ in
             if (alert.textFields![0].text?.count ?? 0 > 4) {
                 let id_room = UUID().uuidString
-                let room = Room(name: alert.textFields![0].text!, id_room: id_room)
+                let room = Room(name: alert.textFields![0].text!, id_room: id_room, room_users: nil)
                 createRoom(room: room) {
                     let drawingViewController = DrawingViewController.instantiate()
                     drawingViewController.socketProvider = self.socketProvider

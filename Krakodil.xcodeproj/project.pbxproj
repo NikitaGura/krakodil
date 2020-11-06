@@ -36,6 +36,7 @@
 		21E0772A254B5FDC00E87444 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E07729254B5FDC00E87444 /* RoomsViewController.swift */; };
 		21E0772E254B623000E87444 /* UserDefaultsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0772D254B623000E87444 /* UserDefaultsNames.swift */; };
 		21ED1E6A25558CDA007F07A6 /* CreateRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E6925558CDA007F07A6 /* CreateRoomResponse.swift */; };
+		21ED1E6D25559BEF007F07A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E6C25559BEF007F07A6 /* User.swift */; };
 		2CF8295DEFA4C4A31B40EDB9 /* Pods_Krakodil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		21E07729254B5FDC00E87444 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		21E0772D254B623000E87444 /* UserDefaultsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsNames.swift; sourceTree = "<group>"; };
 		21ED1E6925558CDA007F07A6 /* CreateRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomResponse.swift; sourceTree = "<group>"; };
+		21ED1E6C25559BEF007F07A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Krakodil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF349C430B4772AABDF23F76 /* Pods-Krakodil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krakodil.debug.xcconfig"; path = "Target Support Files/Pods-Krakodil/Pods-Krakodil.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				21A18A192549BEDC00A1681A /* CleanBool.swift */,
 				216CEBB7254F315A0067DE3A /* Room.swift */,
 				21ED1E6925558CDA007F07A6 /* CreateRoomResponse.swift */,
+				21ED1E6C25559BEF007F07A6 /* User.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				21DD2F95252F07C30045EEE4 /* CellNames.swift in Sources */,
 				216CEBAC254EDC6E0067DE3A /* RoomTableViewCell.swift in Sources */,
 				216BE41B24FAB72B00C16813 /* Storyboarded.swift in Sources */,
+				21ED1E6D25559BEF007F07A6 /* User.swift in Sources */,
 				21122CDA25332D650084F812 /* SocketProvider.swift in Sources */,
 				21ED1E6A25558CDA007F07A6 /* CreateRoomResponse.swift in Sources */,
 				21A18A1725499E1B00A1681A /* Naming.swift in Sources */,
