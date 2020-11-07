@@ -23,4 +23,6 @@ struct Naming {
     static let name = "name"
     static let id_device = "id_device"
     static let user = "user"
+    static let data = "data"
+    static let line = "line"
 }

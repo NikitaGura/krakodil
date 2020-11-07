@@ -20,6 +20,12 @@ class DrawingViewController: UIViewController, Storyboarded {
         canvasView.socketProvider = socketProvider
         socketProvider.emitJoinToRoom(room: room)
         canvasView.setUpCanvas(room: room)
+        getLinesRoom(room: room) { (lines) in
+            self.canvasView.addLines(lines: lines ?? [])
+        } errorResponse: {
+            // TODO: Analytics
+        }
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -41,9 +41,9 @@ public class SocketProvider{
     
     func emitDraw(line: Line, room: Room){
         let points = line.points.map({[Naming.x :$0.x, Naming.y: $0.y]})
-        socket.emit(SocketAPI.eventDraw, [Naming.points :points,
+        socket.emit(SocketAPI.eventDraw, [Naming.line: [Naming.points: points,
                                           Naming.colorLine: line.color.rgbJSON(),
-                                          Naming.widthLine: line.width,
+                                          Naming.widthLine: line.width],
                                           Naming.id_room: room.id_room])
     }
     
@@ -71,15 +71,12 @@ public class SocketProvider{
             let response = string.data(using: .utf8)!
             do {
                 let lineResponse = try JSONDecoder().decode(LineResponse.self, from: response)
-                let pointsMapped = lineResponse.points.map({CGPoint(x: $0.x, y: $0.y)})
-                let color = UIColor(red: CGFloat(lineResponse.color_line.R), green: CGFloat(lineResponse.color_line.G), blue: CGFloat(lineResponse.color_line.B), alpha: 1)
-                completion(Line(color: color, width: lineResponse.width_line, points: pointsMapped))
+                completion(mapResponse(lineResponse: lineResponse))
             }
             catch let error as NSError {
                 print(error)
             }
         }
     }
-    
 }
 

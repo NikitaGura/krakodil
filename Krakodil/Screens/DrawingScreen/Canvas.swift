@@ -90,5 +90,10 @@ class Canvas: UIView{
         setNeedsDisplay()
     }
     
+    func addLines(lines: [Line]){
+        linesPoints = lines
+        setNeedsDisplay()
+    }
+    
     
 }

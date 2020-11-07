@@ -37,6 +37,7 @@
 		21E0772E254B623000E87444 /* UserDefaultsNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0772D254B623000E87444 /* UserDefaultsNames.swift */; };
 		21ED1E6A25558CDA007F07A6 /* CreateRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E6925558CDA007F07A6 /* CreateRoomResponse.swift */; };
 		21ED1E6D25559BEF007F07A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E6C25559BEF007F07A6 /* User.swift */; };
+		21ED1E712556BED3007F07A6 /* MapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E702556BED3007F07A6 /* MapResponse.swift */; };
 		2CF8295DEFA4C4A31B40EDB9 /* Pods_Krakodil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		21E0772D254B623000E87444 /* UserDefaultsNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsNames.swift; sourceTree = "<group>"; };
 		21ED1E6925558CDA007F07A6 /* CreateRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomResponse.swift; sourceTree = "<group>"; };
 		21ED1E6C25559BEF007F07A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		21ED1E702556BED3007F07A6 /* MapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapResponse.swift; sourceTree = "<group>"; };
 		BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Krakodil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF349C430B4772AABDF23F76 /* Pods-Krakodil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krakodil.debug.xcconfig"; path = "Target Support Files/Pods-Krakodil/Pods-Krakodil.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +170,7 @@
 		2198478F2371C6240044518C /* Krakodil */ = {
 			isa = PBXGroup;
 			children = (
+				21ED1E6F2556BEC4007F07A6 /* utils */,
 				21122CD0253329470084F812 /* Networking */,
 				21DD2F91252F06BC0045EEE4 /* Constants */,
 				216BE42324FADC9600C16813 /* Model */,
@@ -240,6 +243,14 @@
 				21E07729254B5FDC00E87444 /* RoomsViewController.swift */,
 			);
 			path = Rooms;
+			sourceTree = "<group>";
+		};
+		21ED1E6F2556BEC4007F07A6 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				21ED1E702556BED3007F07A6 /* MapResponse.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		AC5EFAF4738A85FC9D5F2BEB /* Pods */ = {
@@ -380,6 +391,7 @@
 				21122CDE253340560084F812 /* Point.swift in Sources */,
 				21122CD625332A120084F812 /* SocketAPI.swift in Sources */,
 				219847912371C6240044518C /* AppDelegate.swift in Sources */,
+				21ED1E712556BED3007F07A6 /* MapResponse.swift in Sources */,
 				216CEBBB254F32790067DE3A /* ServerAPI.swift in Sources */,
 				21A18A1A2549BEDC00A1681A /* CleanBool.swift in Sources */,
 				216BE41824FAB66600C16813 /* SettingsDrawerViewController.swift in Sources */,

@@ -43,3 +43,19 @@ func createRoom(room: Room, completion: @escaping () -> Void, errorResponse: @es
             }
         }
 }
+
+func getLinesRoom(room: Room, completion: @escaping ([Line]?) -> Void, errorResponse: @escaping () -> Void) {
+    AF.request(ServerAPI.domian+ServerAPI.get_lines_room, method: .post, parameters: [Naming.id_room: room.id_room], encoding: URLEncoding.default).response {
+            ( response) in
+                guard let data = response.data else { return }
+            do {
+                let linesResponse = try JSONDecoder().decode([LineResponse].self, from: data)
+                let lines = linesResponse.map(mapResponse)
+                completion(lines)
+            } catch {
+                errorResponse()
+                print("Parse room error: \(error)")
+                
+            }
+        }
+}

@@ -13,4 +13,5 @@ struct ServerAPI {
     static let domian = "http://localhost:3000"
     static let get_rooms = "/get_rooms"
     static let add_room = "/add_room"
+    static let get_lines_room = "/get_lines_room"
 }
