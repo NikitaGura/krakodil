@@ -23,8 +23,8 @@ public class SocketProvider{
         let deviceId = UIDevice.current.identifierForVendor?.uuidString
         if let nickName =  UserDefaults.standard.string(forKey: UserDefaultsNames.user_name){
             socket.emit(SocketAPI.event_user_join_to_room, [
-                            Naming.room: [Naming.id_room: room.id_room],
-                            Naming.user: [Naming.name: nickName, Naming.id_device: deviceId]
+                Naming.room: [Naming.id_room: room.id_room],
+                Naming.user: [Naming.name: nickName, Naming.id_device: deviceId]
             ])
         }
     }
@@ -33,8 +33,8 @@ public class SocketProvider{
         let deviceId = UIDevice.current.identifierForVendor?.uuidString
         if let nickName =  UserDefaults.standard.string(forKey: UserDefaultsNames.user_name){
             socket.emit(SocketAPI.event_user_disconnect_from_room, [
-                            Naming.room: [Naming.id_room: room.id_room],
-                            Naming.user: [Naming.name: nickName, Naming.id_device: deviceId]
+                Naming.room: [Naming.id_room: room.id_room],
+                Naming.user: [Naming.name: nickName, Naming.id_device: deviceId]
             ])
         }
     }
@@ -42,8 +42,8 @@ public class SocketProvider{
     func emitDraw(line: Line, room: Room){
         let points = line.points.map({[Naming.x :$0.x, Naming.y: $0.y]})
         socket.emit(SocketAPI.eventDraw, [Naming.line: [Naming.points: points,
-                                          Naming.colorLine: line.color.rgbJSON(),
-                                          Naming.widthLine: line.width],
+                                                        Naming.colorLine: line.color.rgbJSON(),
+                                                        Naming.widthLine: line.width],
                                           Naming.id_room: room.id_room])
     }
     
@@ -72,11 +72,32 @@ public class SocketProvider{
             do {
                 let lineResponse = try JSONDecoder().decode(LineResponse.self, from: response)
                 completion(mapResponse(lineResponse: lineResponse))
-            }
-            catch let error as NSError {
+            } catch let error as NSError {
                 print(error)
             }
         }
+    }
+    
+    func sendMessage(room: Room, user: User, message: String){
+        socket.emit(SocketAPI.event_send_message_room, [Naming.id_room: room.id_room,
+                                                               Naming.user: [Naming.name: user.name, Naming.id_device: user.id_device],
+                                                               Naming.message: message])
+
+    }
+    
+    func onMessage(completion: @escaping  (_ message: Message)->()){
+        socket.on(SocketAPI.event_message_room) { data, ack in
+            let string = data[0] as! String
+            let response = string.data(using: .utf8)!
+            do {
+                let message = try JSONDecoder().decode(Message.self, from: response)
+                completion(message)
+            } catch let error as NSError {
+                print(error)
+                
+            }
+        }
+
     }
 }
 

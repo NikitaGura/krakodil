@@ -17,9 +17,11 @@ class RoomsViewController: UIViewController, Storyboarded{
     var rooms: [Room] = []
     var nickName: String?
     var socketProvider: SocketProvider = SocketProvider()
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserData()
         navigationItem.setHidesBackButton(true, animated: false)
         let nibCell = UINib(nibName: CellNames.roomCollectionViewCell, bundle: nil)
         roomsTableView.register(nibCell, forCellReuseIdentifier: CellNames.roomCollectionViewCell)
@@ -31,6 +33,13 @@ class RoomsViewController: UIViewController, Storyboarded{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchRooms()
+    }
+    
+    func getUserData(){
+        if let nickName =  UserDefaults.standard.string(forKey: UserDefaultsNames.user_name){
+            let deviceId = UIDevice.current.identifierForVendor?.uuidString
+            user = User(name: nickName, id_device: deviceId!)
+        }
     }
     
    @objc func fetchRooms(){
@@ -83,6 +92,7 @@ extension RoomsViewController: UITableViewDelegate{
         let drawingViewController = DrawingViewController.instantiate()
         drawingViewController.socketProvider = socketProvider
         drawingViewController.room = room
+        drawingViewController.user = user
         navigationController?.pushViewController(drawingViewController, animated: true)
     }
 }

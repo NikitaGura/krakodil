@@ -132,11 +132,55 @@
                                     <constraint firstAttribute="width" constant="320" id="LKI-Wt-hsV"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U5f-0u-oIM">
+                                <rect key="frame" x="0.0" y="480" width="375" height="139"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="IUu-lR-qg3" id="ekV-Hr-SGw"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lha-p2-86x">
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-dy-lmC">
+                                        <rect key="frame" x="10" y="7" width="285" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIL-J5-sIf">
+                                        <rect key="frame" x="300" y="6.5" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="JCQ-2V-ULS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="IUu-lR-qg3" eventType="touchUpInside" id="EFS-vS-dfR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="kIL-J5-sIf" firstAttribute="centerY" secondItem="lha-p2-86x" secondAttribute="centerY" id="AK0-lb-GXY"/>
+                                    <constraint firstItem="L4U-dy-lmC" firstAttribute="leading" secondItem="lha-p2-86x" secondAttribute="leading" constant="10" id="Sqo-QY-off"/>
+                                    <constraint firstAttribute="trailing" secondItem="kIL-J5-sIf" secondAttribute="trailing" constant="5" id="V7i-bA-jOZ"/>
+                                    <constraint firstItem="L4U-dy-lmC" firstAttribute="centerY" secondItem="lha-p2-86x" secondAttribute="centerY" id="ZAU-sZ-nZl"/>
+                                    <constraint firstAttribute="height" constant="48" id="kJL-gM-RdH"/>
+                                    <constraint firstItem="kIL-J5-sIf" firstAttribute="leading" secondItem="L4U-dy-lmC" secondAttribute="trailing" constant="5" id="lZ6-la-bpg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wk7-7W-gCi"/>
                         <color key="backgroundColor" red="0.31773410486924358" green="0.86557173198158466" blue="0.89952932305904254" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="U5f-0u-oIM" firstAttribute="trailing" secondItem="wk7-7W-gCi" secondAttribute="trailing" id="S2b-UZ-37e"/>
+                            <constraint firstItem="lha-p2-86x" firstAttribute="top" secondItem="U5f-0u-oIM" secondAttribute="bottom" id="akQ-wz-v60"/>
+                            <constraint firstItem="lha-p2-86x" firstAttribute="leading" secondItem="wk7-7W-gCi" secondAttribute="leading" id="bfd-Sa-hch"/>
+                            <constraint firstItem="lha-p2-86x" firstAttribute="bottom" secondItem="wk7-7W-gCi" secondAttribute="bottom" id="ePh-C7-8Pl"/>
+                            <constraint firstItem="U5f-0u-oIM" firstAttribute="top" secondItem="M53-dx-Rwx" secondAttribute="bottom" constant="5" id="jv2-WP-PCc"/>
                             <constraint firstItem="M53-dx-Rwx" firstAttribute="centerX" secondItem="Hpb-hS-cYY" secondAttribute="centerX" id="qqg-fE-B7m"/>
+                            <constraint firstItem="lha-p2-86x" firstAttribute="trailing" secondItem="wk7-7W-gCi" secondAttribute="trailing" id="smZ-UZ-fXR"/>
+                            <constraint firstItem="U5f-0u-oIM" firstAttribute="leading" secondItem="wk7-7W-gCi" secondAttribute="leading" id="sq7-ks-3vr"/>
                             <constraint firstItem="M53-dx-Rwx" firstAttribute="top" secondItem="wk7-7W-gCi" secondAttribute="top" constant="25" id="zAe-QL-TVD"/>
                         </constraints>
                     </view>
@@ -158,11 +202,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="canvasView" destination="M53-dx-Rwx" id="ur3-j3-ZuI"/>
+                        <outlet property="inputMessage" destination="L4U-dy-lmC" id="lg7-24-g8n"/>
+                        <outlet property="messagesTableView" destination="U5f-0u-oIM" id="qA2-oy-XZ5"/>
+                        <outlet property="sendButton" destination="kIL-J5-sIf" id="aLf-tq-QSH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBB-Es-sbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-404.34782608695656" y="83.705357142857139"/>
+            <point key="canvasLocation" x="-405.60000000000002" y="83.208395802098963"/>
         </scene>
         <!--Settings Drawer View Controller-->
         <scene sceneID="LMk-hw-stJ">

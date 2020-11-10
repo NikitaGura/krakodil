@@ -25,4 +25,5 @@ struct Naming {
     static let user = "user"
     static let data = "data"
     static let line = "line"
+    static let message = "message"
 }

@@ -25,8 +25,6 @@ func fetchAllRooms(completion: @escaping ([Room]?) -> Void) {
 }
 
 func createRoom(room: Room, completion: @escaping () -> Void, errorResponse: @escaping () -> Void) {
-   
-   
         AF.request(ServerAPI.domian+ServerAPI.add_room, method: .post, parameters: [Naming.name: room.name, Naming.id_room: room.id_room], encoding: URLEncoding.default).response {
             ( response) in
                 guard let data = response.data else { return }

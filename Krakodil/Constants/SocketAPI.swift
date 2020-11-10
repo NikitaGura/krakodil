@@ -13,4 +13,6 @@ struct SocketAPI {
     static let eventCleanLines = "event_clean_lines"
     static let event_user_join_to_room = "event_user_join_to_room"
     static let event_user_disconnect_from_room = "event_user_disconnect_from_room"
+    static let event_send_message_room = "event_send_message_room"
+    static let event_message_room = "event_message_room"
 }

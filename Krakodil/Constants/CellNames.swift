@@ -11,4 +11,5 @@ import Foundation
 struct CellNames {
     static let colorCollectionViewCell = "ColorCollectionViewCell"
     static let roomCollectionViewCell = "RoomTableViewCell"
+    static let messageTableViewCell = "MessageTableViewCell"
 }

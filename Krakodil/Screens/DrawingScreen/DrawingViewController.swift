@@ -12,11 +12,21 @@ import UIKit
 
 class DrawingViewController: UIViewController, Storyboarded {
     
+    @IBOutlet weak var messagesTableView: UITableView!
+    @IBOutlet weak var inputMessage: UITextField!
     @IBOutlet weak var canvasView: Canvas!
+    @IBOutlet weak var sendButton: UIButton!
+    
+    var user: User?
     var socketProvider: SocketProvider!
     var room: Room!
+    var messages: [Message] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nibCell = UINib(nibName: CellNames.messageTableViewCell, bundle: nil)
+        messagesTableView.register(nibCell, forCellReuseIdentifier: CellNames.messageTableViewCell)
+        messagesTableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi));
         canvasView.socketProvider = socketProvider
         socketProvider.emitJoinToRoom(room: room)
         canvasView.setUpCanvas(room: room)
@@ -25,12 +35,24 @@ class DrawingViewController: UIViewController, Storyboarded {
         } errorResponse: {
             // TODO: Analytics
         }
-
+        socketProvider.onMessage { message in
+            self.messages.insert(message, at: 0)
+            self.messagesTableView.reloadData()
+            if(message.user.id_device == self.user?.id_device){
+                self.cleanInput()
+            }
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         socketProvider.emitLeaveRoom(room: room)
+    }
+    
+    func cleanInput(){
+        view.endEditing(true)
+        sendButton.isEnabled = true
+        inputMessage.text = ""
     }
     
     @IBAction func tapedSettingDraw(_ sender: Any) {
@@ -55,5 +77,32 @@ class DrawingViewController: UIViewController, Storyboarded {
         alert.addAction(UIAlertAction(title: Strings.GENERAL_NO, style: .cancel, handler: nil))
         self.present(alert, animated: true)
     }
+    
+    @IBAction func sendMessage(_ sender: UIButton) {
+        if( inputMessage.text?.count ?? 0 > 0 && user != nil) {
+            sender.isEnabled = false
+            socketProvider.sendMessage(room: room, user: user!, message: inputMessage.text!)
+        }
+    }
+    
 }
 
+extension DrawingViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = messagesTableView.dequeueReusableCell(withIdentifier: CellNames.messageTableViewCell) as! MessageTableViewCell
+        cell.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi));
+        cell.message = messages[indexPath.row]
+        return cell
+    }
+    
+}

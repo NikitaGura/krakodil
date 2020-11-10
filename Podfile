@@ -7,5 +7,5 @@ target 'Krakodil' do
   # Pods for Krakodil
 	pod 'Socket.IO-Client-Swift', '~> 15.2.0'
   pod 'Alamofire', '~> 5.2'
-  
+  pod 'IQKeyboardManagerSwift', '6.3.0'
 end

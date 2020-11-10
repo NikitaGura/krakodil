@@ -38,6 +38,9 @@
 		21ED1E6A25558CDA007F07A6 /* CreateRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E6925558CDA007F07A6 /* CreateRoomResponse.swift */; };
 		21ED1E6D25559BEF007F07A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E6C25559BEF007F07A6 /* User.swift */; };
 		21ED1E712556BED3007F07A6 /* MapResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E702556BED3007F07A6 /* MapResponse.swift */; };
+		21ED1E76255AA0D0007F07A6 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E74255AA0D0007F07A6 /* MessageTableViewCell.swift */; };
+		21ED1E77255AA0D0007F07A6 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21ED1E75255AA0D0007F07A6 /* MessageTableViewCell.xib */; };
+		21ED1E8D255AABDB007F07A6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E8C255AABDB007F07A6 /* Message.swift */; };
 		2CF8295DEFA4C4A31B40EDB9 /* Pods_Krakodil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,9 @@
 		21ED1E6925558CDA007F07A6 /* CreateRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomResponse.swift; sourceTree = "<group>"; };
 		21ED1E6C25559BEF007F07A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		21ED1E702556BED3007F07A6 /* MapResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapResponse.swift; sourceTree = "<group>"; };
+		21ED1E74255AA0D0007F07A6 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		21ED1E75255AA0D0007F07A6 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		21ED1E8C255AABDB007F07A6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Krakodil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF349C430B4772AABDF23F76 /* Pods-Krakodil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krakodil.debug.xcconfig"; path = "Target Support Files/Pods-Krakodil/Pods-Krakodil.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +123,7 @@
 				216CEBB7254F315A0067DE3A /* Room.swift */,
 				21ED1E6925558CDA007F07A6 /* CreateRoomResponse.swift */,
 				21ED1E6C25559BEF007F07A6 /* User.swift */,
+				21ED1E8C255AABDB007F07A6 /* Message.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -136,6 +143,8 @@
 				216BE42024FABB8D00C16813 /* ColorCollectionViewCell.xib */,
 				216CEBAA254EDC6E0067DE3A /* RoomTableViewCell.swift */,
 				216CEBAB254EDC6E0067DE3A /* RoomTableViewCell.xib */,
+				21ED1E74255AA0D0007F07A6 /* MessageTableViewCell.swift */,
+				21ED1E75255AA0D0007F07A6 /* MessageTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -327,6 +336,7 @@
 				2198479D2371C6260044518C /* LaunchScreen.storyboard in Resources */,
 				2198479A2371C6260044518C /* Assets.xcassets in Resources */,
 				216BE42224FABB8D00C16813 /* ColorCollectionViewCell.xib in Resources */,
+				21ED1E77255AA0D0007F07A6 /* MessageTableViewCell.xib in Resources */,
 				216BE41624FAB10F00C16813 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +397,7 @@
 				21E0772E254B623000E87444 /* UserDefaultsNames.swift in Sources */,
 				216BE42124FABB8D00C16813 /* ColorCollectionViewCell.swift in Sources */,
 				21E07726254B5DD500E87444 /* NameCreateScreenViewController.swift in Sources */,
+				21ED1E76255AA0D0007F07A6 /* MessageTableViewCell.swift in Sources */,
 				219847AE2371CD380044518C /* ColorApp.swift in Sources */,
 				21122CDE253340560084F812 /* Point.swift in Sources */,
 				21122CD625332A120084F812 /* SocketAPI.swift in Sources */,
@@ -400,6 +411,7 @@
 				219847A62371C6E30044518C /* Canvas.swift in Sources */,
 				21DD2F95252F07C30045EEE4 /* CellNames.swift in Sources */,
 				216CEBAC254EDC6E0067DE3A /* RoomTableViewCell.swift in Sources */,
+				21ED1E8D255AABDB007F07A6 /* Message.swift in Sources */,
 				216BE41B24FAB72B00C16813 /* Storyboarded.swift in Sources */,
 				21ED1E6D25559BEF007F07A6 /* User.swift in Sources */,
 				21122CDA25332D650084F812 /* SocketProvider.swift in Sources */,
