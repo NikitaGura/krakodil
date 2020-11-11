@@ -11,11 +11,11 @@ import UIKit
 
 class Canvas: UIView{
     
+    weak var drawingViewControllerDelegate: DrawingViewControllerDelegate?
     var selectedColor: UIColor = .black
     var selectedWidth: Float = 5.0
     var linesPoints = [Line]()
-    var socketProvider: SocketProvider?
-    var room: Room!
+    
     init () {
         super.init(frame: .zero)
     }
@@ -25,10 +25,10 @@ class Canvas: UIView{
         
     }
     
-    func setUpCanvas(room: Room){
-        self.room = room
-        socketProvider?.onDraw(completion: listenLine)
-        socketProvider?.onCleanLines(completion: listenClear)
+    func setUpCanvas(){
+        drawingViewControllerDelegate?.socketProvider?.onDraw(completion: listenLine)
+        drawingViewControllerDelegate?.socketProvider?.onCleanLines(completion: listenClear)
+        drawingViewControllerDelegate?.socketProvider?.onOnePlayerLeft(completion: listenOneLeftPlayer)
     }
     
     override func draw( _ rect: CGRect){
@@ -54,28 +54,34 @@ class Canvas: UIView{
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let point = touches.first?.location(in: self) else {return}
-        guard var lastLine = linesPoints.popLast() else {return}
-        lastLine.points.append(point)
-        linesPoints.append(lastLine)
-        setNeedsDisplay()
+        if(drawingViewControllerDelegate!.isPainter){
+            guard let point = touches.first?.location(in: self) else {return}
+            guard var lastLine = linesPoints.popLast() else {return}
+            lastLine.points.append(point)
+            linesPoints.append(lastLine)
+            setNeedsDisplay()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let point = touches.first?.location(in: self) else {return}
-        linesPoints.append(Line.init(color: selectedColor , width: selectedWidth, points: [point]))
-        setNeedsDisplay()
+        if(drawingViewControllerDelegate!.isPainter){
+            guard let point = touches.first?.location(in: self) else {return}
+            linesPoints.append(Line.init(color: selectedColor , width: selectedWidth, points: [point]))
+            setNeedsDisplay()
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let lastLine = linesPoints.last else {return}
-        socketProvider?.emitDraw(line: lastLine, room: room)
+        if(drawingViewControllerDelegate!.isPainter){
+            guard let lastLine = linesPoints.last else {return}
+            drawingViewControllerDelegate?.socketProvider?.emitDraw(line: lastLine, room: drawingViewControllerDelegate!.room!)
+        }
     }
     
     func clear(){
-        linesPoints.removeAll()
-        setNeedsDisplay()
-        socketProvider?.emitCleanLines(room: room)
+            linesPoints.removeAll()
+            setNeedsDisplay()
+            drawingViewControllerDelegate?.socketProvider?.emitCleanLines(room: drawingViewControllerDelegate!.room!)
     }
     
     func listenClear(isClean: Bool){
@@ -88,6 +94,11 @@ class Canvas: UIView{
     func listenLine(line: Line){
         linesPoints.append(line)
         setNeedsDisplay()
+    }
+    
+    func listenOneLeftPlayer(){
+        listenClear(isClean: true)
+        drawingViewControllerDelegate?.isPainter = false
     }
     
     func addLines(lines: [Line]){

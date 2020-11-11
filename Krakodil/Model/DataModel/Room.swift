@@ -11,7 +11,8 @@ import Foundation
 struct Room: Codable {
    let name: String
    let id_room: String
-   let room_users: [User]?
+   var room_users: [User]?
+   let room_points: [LineResponse]?
 }
 
 struct RoomsResponse: Codable {

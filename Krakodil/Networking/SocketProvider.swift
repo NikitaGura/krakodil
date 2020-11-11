@@ -97,7 +97,52 @@ public class SocketProvider{
                 
             }
         }
-
+    }
+    
+    func onSelectPainter(completion: @escaping  (_ selectPainterResponse: SelectPainterResponse)->()) {
+        socket.on(SocketAPI.event_select_painter){ data, ack in
+            let string = data[0] as! String
+            let response = string.data(using: .utf8)!
+            do {
+                let selectPainterResponse = try JSONDecoder().decode(SelectPainterResponse.self, from: response)
+                completion(selectPainterResponse)
+            } catch let error as NSError {
+                print(error)
+                
+            }
+        }
+    }
+    
+    func onOnePlayerLeft(completion: @escaping ()->()){
+        socket.on(SocketAPI.event_one_player_left){ data, ack in
+            completion()
+        }
+    }
+    
+    func onConnectUserRoom(completion: @escaping (_ user: User)->()){
+        socket.on(SocketAPI.event_user_connected_to_room){ data, ack in
+            let string = data[0] as! String
+            let response = string.data(using: .utf8)!
+            do {
+                let user = try JSONDecoder().decode(User.self, from: response)
+                completion(user)
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+    }
+    func onLeaveUserRoom(completion: @escaping (_ user: User)->()){
+        socket.on(SocketAPI.event_user_leave_from_room){ data, ack in
+            let string = data[0] as! String
+            let response = string.data(using: .utf8)!
+            do {
+                let user = try JSONDecoder().decode(User.self, from: response)
+                completion(user)
+            } catch let error as NSError {
+                print(error)
+                
+            }
+        }
     }
 }
 

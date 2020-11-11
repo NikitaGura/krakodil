@@ -15,4 +15,8 @@ struct SocketAPI {
     static let event_user_disconnect_from_room = "event_user_disconnect_from_room"
     static let event_send_message_room = "event_send_message_room"
     static let event_message_room = "event_message_room"
+    static let event_select_painter = "event_select_painter"
+    static let event_one_player_left = "event_one_player_left"
+    static let event_user_connected_to_room = "event_user_connected_to_room"
+    static let event_user_leave_from_room = "event_user_leave_from_room"
 }

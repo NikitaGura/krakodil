@@ -41,6 +41,9 @@
 		21ED1E76255AA0D0007F07A6 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E74255AA0D0007F07A6 /* MessageTableViewCell.swift */; };
 		21ED1E77255AA0D0007F07A6 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21ED1E75255AA0D0007F07A6 /* MessageTableViewCell.xib */; };
 		21ED1E8D255AABDB007F07A6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E8C255AABDB007F07A6 /* Message.swift */; };
+		21ED1E90255B1C50007F07A6 /* SelectWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E8F255B1C50007F07A6 /* SelectWordViewController.swift */; };
+		21ED1E93255B1E53007F07A6 /* DrawingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E92255B1E53007F07A6 /* DrawingViewControllerDelegate.swift */; };
+		21ED1E98255C14E3007F07A6 /* SelectPainterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ED1E97255C14E3007F07A6 /* SelectPainterResponse.swift */; };
 		2CF8295DEFA4C4A31B40EDB9 /* Pods_Krakodil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,9 @@
 		21ED1E74255AA0D0007F07A6 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		21ED1E75255AA0D0007F07A6 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		21ED1E8C255AABDB007F07A6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		21ED1E8F255B1C50007F07A6 /* SelectWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWordViewController.swift; sourceTree = "<group>"; };
+		21ED1E92255B1E53007F07A6 /* DrawingViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewControllerDelegate.swift; sourceTree = "<group>"; };
+		21ED1E97255C14E3007F07A6 /* SelectPainterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPainterResponse.swift; sourceTree = "<group>"; };
 		BCBFDCC63150D5338CF236ED /* Pods_Krakodil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Krakodil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF349C430B4772AABDF23F76 /* Pods-Krakodil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krakodil.debug.xcconfig"; path = "Target Support Files/Pods-Krakodil/Pods-Krakodil.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +130,7 @@
 				21ED1E6925558CDA007F07A6 /* CreateRoomResponse.swift */,
 				21ED1E6C25559BEF007F07A6 /* User.swift */,
 				21ED1E8C255AABDB007F07A6 /* Message.swift */,
+				21ED1E97255C14E3007F07A6 /* SelectPainterResponse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -212,6 +219,8 @@
 				219847A52371C6E30044518C /* Canvas.swift */,
 				219847942371C6240044518C /* DrawingViewController.swift */,
 				216BE41724FAB66600C16813 /* SettingsDrawerViewController.swift */,
+				21ED1E8F255B1C50007F07A6 /* SelectWordViewController.swift */,
+				21ED1E92255B1E53007F07A6 /* DrawingViewControllerDelegate.swift */,
 			);
 			path = DrawingScreen;
 			sourceTree = "<group>";
@@ -398,7 +407,9 @@
 				216BE42124FABB8D00C16813 /* ColorCollectionViewCell.swift in Sources */,
 				21E07726254B5DD500E87444 /* NameCreateScreenViewController.swift in Sources */,
 				21ED1E76255AA0D0007F07A6 /* MessageTableViewCell.swift in Sources */,
+				21ED1E90255B1C50007F07A6 /* SelectWordViewController.swift in Sources */,
 				219847AE2371CD380044518C /* ColorApp.swift in Sources */,
+				21ED1E93255B1E53007F07A6 /* DrawingViewControllerDelegate.swift in Sources */,
 				21122CDE253340560084F812 /* Point.swift in Sources */,
 				21122CD625332A120084F812 /* SocketAPI.swift in Sources */,
 				219847912371C6240044518C /* AppDelegate.swift in Sources */,
@@ -406,6 +417,7 @@
 				216CEBBB254F32790067DE3A /* ServerAPI.swift in Sources */,
 				21A18A1A2549BEDC00A1681A /* CleanBool.swift in Sources */,
 				216BE41824FAB66600C16813 /* SettingsDrawerViewController.swift in Sources */,
+				21ED1E98255C14E3007F07A6 /* SelectPainterResponse.swift in Sources */,
 				216BE42524FADCA200C16813 /* Line.swift in Sources */,
 				216CEBB5254F312B0067DE3A /* Requests.swift in Sources */,
 				219847A62371C6E30044518C /* Canvas.swift in Sources */,

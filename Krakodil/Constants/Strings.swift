@@ -18,4 +18,6 @@ struct Strings {
     static let ROOMS_NAME = "Name:"
     static let ROOMS_INPUT_NAME = "Input rooms's name here..."
     static let ROOMS_ROOM_NAME_IS_SMALL = "Room's name is small"
+    static let ROOMS_CONNECTED = "Connected"
+    static let ROOMS_DISCONNECTED = "Disconnected"
 }

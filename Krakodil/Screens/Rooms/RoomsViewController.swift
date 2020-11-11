@@ -30,8 +30,8 @@ class RoomsViewController: UIViewController, Storyboarded{
         roomsTableView.addSubview(refreshControl)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         fetchRooms()
     }
     
@@ -60,7 +60,7 @@ class RoomsViewController: UIViewController, Storyboarded{
         alert.addAction(UIAlertAction(title: Strings.GENERAL_YES, style: .default) {_ in
             if (alert.textFields![0].text?.count ?? 0 > 4) {
                 let id_room = UUID().uuidString
-                let room = Room(name: alert.textFields![0].text!, id_room: id_room, room_users: nil)
+                let room = Room(name: alert.textFields![0].text!, id_room: id_room, room_users: nil, room_points: nil)
                 createRoom(room: room) {
                     let drawingViewController = DrawingViewController.instantiate()
                     drawingViewController.socketProvider = self.socketProvider
@@ -83,17 +83,29 @@ class RoomsViewController: UIViewController, Storyboarded{
         alertError.addAction(UIAlertAction(title: Strings.GENERAL_YES, style: .default, handler: nil))
         self.present(alertError, animated: true)
     }
-    
+
 }
 
 extension RoomsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let room = rooms[indexPath.row]
-        let drawingViewController = DrawingViewController.instantiate()
-        drawingViewController.socketProvider = socketProvider
-        drawingViewController.room = room
-        drawingViewController.user = user
-        navigationController?.pushViewController(drawingViewController, animated: true)
+        getRoom(room: room) { (room) in
+            if(room.room_users?.count ?? 0 < 8){
+                let drawingViewController = DrawingViewController.instantiate()
+                drawingViewController.socketProvider = self.socketProvider
+                drawingViewController.room = room
+                drawingViewController.user = self.user
+                self.navigationController?.pushViewController(drawingViewController, animated: true)
+            }else {
+                //TODO popup room is full
+            }
+           
+        } errorResponse: {
+            // TODO Analytics
+        }
+
+        
+       
     }
 }
 

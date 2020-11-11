@@ -8,51 +8,114 @@
 
 import UIKit
 
-
-
-class DrawingViewController: UIViewController, Storyboarded {
+class DrawingViewController: UIViewController, Storyboarded, DrawingViewControllerDelegate {
     
+    @IBOutlet weak var playersCount: UILabel!
+    @IBOutlet weak var selectWorldLabel: UILabel!
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var inputMessage: UITextField!
     @IBOutlet weak var canvasView: Canvas!
     @IBOutlet weak var sendButton: UIButton!
     
-    var user: User?
-    var socketProvider: SocketProvider!
-    var room: Room!
-    var messages: [Message] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let nibCell = UINib(nibName: CellNames.messageTableViewCell, bundle: nil)
-        messagesTableView.register(nibCell, forCellReuseIdentifier: CellNames.messageTableViewCell)
-        messagesTableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi));
-        canvasView.socketProvider = socketProvider
-        socketProvider.emitJoinToRoom(room: room)
-        canvasView.setUpCanvas(room: room)
-        getLinesRoom(room: room) { (lines) in
-            self.canvasView.addLines(lines: lines ?? [])
-        } errorResponse: {
-            // TODO: Analytics
+    var selectWord: String?{
+        didSet{
+            if(isPainter){
+                selectWorldLabel.text = selectWord
+            }
         }
-        socketProvider.onMessage { message in
-            self.messages.insert(message, at: 0)
-            self.messagesTableView.reloadData()
-            if(message.user.id_device == self.user?.id_device){
-                self.cleanInput()
+    }
+    var countPlayer: Int = 0 {
+        didSet{
+            playersCount.text = "\(countPlayer)/8"
+        }
+    }
+    var isPainter: Bool = false {
+        didSet{
+            if(!isPainter){
+                selectWorldLabel.text = ""
             }
         }
     }
     
+    var user: User?
+    var socketProvider: SocketProvider?
+    var room: Room?
+    var messages: [Message] = []
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        countPlayer = room?.room_users?.count ?? 0
+        selectWorldLabel.text = ""
+        let nibCell = UINib(nibName: CellNames.messageTableViewCell, bundle: nil)
+        messagesTableView.register(nibCell, forCellReuseIdentifier: CellNames.messageTableViewCell)
+        messagesTableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi));
+        canvasView.drawingViewControllerDelegate = self
+        canvasView.setUpCanvas()
+        socketProvider!.emitJoinToRoom(room: room!)
+        setLoadedLines(lineResponse: room?.room_points)
+        
+        socketProvider?.onMessage(completion: listenMessage)
+        socketProvider?.onSelectPainter(completion: listenSelectPainter)
+        socketProvider?.onConnectUserRoom(completion: listenUserConnect)
+        socketProvider?.onLeaveUserRoom(completion: listenUserDisconected)
+        
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        socketProvider.emitLeaveRoom(room: room)
+        socketProvider?.emitLeaveRoom(room: room!)
+    }
+    
+    func showSelectorWords(words: [String]){
+        isPainter = true
+        let selectWordViewController = SelectWordViewController.instantiate()
+        selectWordViewController.delegateDrawingViewController = self
+        selectWordViewController.words = words
+        present(selectWordViewController, animated: true, completion: nil)
     }
     
     func cleanInput(){
         view.endEditing(true)
         sendButton.isEnabled = true
         inputMessage.text = ""
+    }
+    
+    func listenUserConnect(user: User){
+        countPlayer += 1
+        room?.room_users?.append(user)
+        messages.insert(Message(user: user, id_room: (room?.id_room)!, message: Strings.ROOMS_CONNECTED), at: 0)
+        messagesTableView.reloadData()
+    }
+    
+    func listenUserDisconected(user: User){
+        countPlayer -= 1
+        room?.room_users?.removeAll(where: { (u) -> Bool in
+            return user.id_device == u.id_device
+        })
+        messages.insert(Message(user: user, id_room: (room?.id_room)!, message: Strings.ROOMS_DISCONNECTED), at: 0)
+        messagesTableView.reloadData()
+    }
+    
+    func listenMessage(message: Message){
+        messages.insert(message, at: 0)
+        messagesTableView.reloadData()
+        if(message.user.id_device == user?.id_device){
+            cleanInput()
+        }
+    }
+    
+    func listenSelectPainter(selectPainterResponse: SelectPainterResponse){
+        if(selectPainterResponse.user.id_device == user?.id_device){
+            showSelectorWords(words: selectPainterResponse.words)
+        }
+        title = selectPainterResponse.user.name
+    }
+    
+    func setLoadedLines(lineResponse: [LineResponse]?){
+        if let lR = lineResponse {
+            let lines = lR.map(mapResponse)
+            canvasView?.addLines(lines: lines)
+        }
     }
     
     @IBAction func tapedSettingDraw(_ sender: Any) {
@@ -68,20 +131,23 @@ class DrawingViewController: UIViewController, Storyboarded {
         self.present(settingsDrawerViewController, animated: false, completion: nil)
     }
     
+    
     @IBAction func tappedClear(_ sender: Any) {
-        let alert = UIAlertController(title: Strings.GENERAL_CLEAR_ALL, message: Strings.GENERAL_ARE_YOU_SURE, preferredStyle: .alert)
+        if(isPainter){
+            let alert = UIAlertController(title: Strings.GENERAL_CLEAR_ALL, message: Strings.GENERAL_ARE_YOU_SURE, preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: Strings.GENERAL_YES, style: .default, handler: { (UIAlertAction) in
-            self.canvasView.clear()
-        }))
-        alert.addAction(UIAlertAction(title: Strings.GENERAL_NO, style: .cancel, handler: nil))
-        self.present(alert, animated: true)
+            alert.addAction(UIAlertAction(title: Strings.GENERAL_YES, style: .default, handler: { (UIAlertAction) in
+                self.canvasView.clear()
+            }))
+            alert.addAction(UIAlertAction(title: Strings.GENERAL_NO, style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func sendMessage(_ sender: UIButton) {
         if( inputMessage.text?.count ?? 0 > 0 && user != nil) {
             sender.isEnabled = false
-            socketProvider.sendMessage(room: room, user: user!, message: inputMessage.text!)
+            socketProvider?.sendMessage(room: room!, user: user!, message: inputMessage.text!)
         }
     }
     
@@ -104,5 +170,4 @@ extension DrawingViewController: UITableViewDataSource {
         cell.message = messages[indexPath.row]
         return cell
     }
-    
 }
