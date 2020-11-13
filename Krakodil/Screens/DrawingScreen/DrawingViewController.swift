@@ -10,17 +10,22 @@ import UIKit
 
 class DrawingViewController: UIViewController, Storyboarded, DrawingViewControllerDelegate {
     
+    @IBOutlet weak var heightInputChat: NSLayoutConstraint!
     @IBOutlet weak var playersCount: UILabel!
     @IBOutlet weak var selectWorldLabel: UILabel!
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var inputMessage: UITextField!
     @IBOutlet weak var canvasView: Canvas!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var secondsLeft: UILabel!
     
+
     var selectWord: String?{
         didSet{
             if(isPainter){
                 selectWorldLabel.text = selectWord
+                countTimer = gameDuration
+                timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(startGameTimer), userInfo: nil, repeats: true)
             }
         }
     }
@@ -31,17 +36,26 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
     }
     var isPainter: Bool = false {
         didSet{
-            if(!isPainter){
+            if(isPainter){
+                heightInputChat.constant = 0
+                isHiddenChat(hidden: true)
+            } else {
                 selectWorldLabel.text = ""
+                isHiddenChat(hidden: false)
             }
         }
     }
     
+    var countTimer = 0
     var user: User?
     var socketProvider: SocketProvider?
     var room: Room?
     var messages: [Message] = []
-   
+    var settingsDrawerViewController: SettingsDrawerViewController?
+    var timer: Timer?
+    
+    var gameDuration = 180
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         countPlayer = room?.room_users?.count ?? 0
@@ -53,17 +67,23 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         canvasView.setUpCanvas()
         socketProvider!.emitJoinToRoom(room: room!)
         setLoadedLines(lineResponse: room?.room_points)
+        secondsLeft.text = countTimer == 0 ? "" : "\(countTimer)"
         
         socketProvider?.onMessage(completion: listenMessage)
         socketProvider?.onSelectPainter(completion: listenSelectPainter)
         socketProvider?.onConnectUserRoom(completion: listenUserConnect)
         socketProvider?.onLeaveUserRoom(completion: listenUserDisconected)
-        
+        socketProvider?.onSendWinner(completion: listenWinner)
+        socketProvider?.onSendMinusGameSecond(completion: listenSeconds)
+        socketProvider?.onOnePlayerLeft(completion: listenOnePlayerLeft)
     }
-    
+        
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         socketProvider?.emitLeaveRoom(room: room!)
+        if (timer != nil) {
+            timer?.invalidate()
+        }
     }
     
     func showSelectorWords(words: [String]){
@@ -102,13 +122,47 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         if(message.user.id_device == user?.id_device){
             cleanInput()
         }
+        if let selectedWorld = self.selectWord {
+            if(message.message.elementsEqual(selectedWorld)){
+                socketProvider?.emitGetWinner(user: message.user, room: room!, selectWord: selectedWorld)
+            }
+        }
     }
     
     func listenSelectPainter(selectPainterResponse: SelectPainterResponse){
         if(selectPainterResponse.user.id_device == user?.id_device){
             showSelectorWords(words: selectPainterResponse.words)
+        }else{
+            isPainter = false
         }
         title = selectPainterResponse.user.name
+    }
+    
+    func listenWinner(winnerResponse: WinnerResponse){
+        stopTimer()
+        let selectWordViewController = SelectWordViewController.instantiate()
+        selectWordViewController.delegateDrawingViewController = self
+        selectWordViewController.winner = winnerResponse.user
+        selectWordViewController.selectWord = winnerResponse.select_word
+        if (settingsDrawerViewController != nil){
+            settingsDrawerViewController?.dismiss(animated: false, completion: nil)
+        }
+        if(winnerResponse.user.id_device == self.user?.id_device){
+            isPainter = true
+            selectWordViewController.words = winnerResponse.words
+        }else{
+            selectWordViewController.isHiddenButtons = true
+            isPainter = false
+        }
+        present(selectWordViewController, animated: true, completion: nil)
+    }
+    
+    func listenOnePlayerLeft(){
+        secondsLeft.text = ""
+    }
+    
+    func listenSeconds(seconds: String){
+        secondsLeft.text = seconds == "0" ? "" : seconds
     }
     
     func setLoadedLines(lineResponse: [LineResponse]?){
@@ -118,17 +172,36 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         }
     }
     
+    func isHiddenChat(hidden: Bool){
+        inputMessage.isHidden = hidden
+        sendButton.isHidden = hidden
+        heightInputChat.constant = hidden ? 0 : 48
+    }
+    
+    @objc func startGameTimer(){
+        socketProvider?.emitMinusGameSecond(seconds: String(countTimer), room: room!)
+        countTimer -= 1
+        if countTimer == 0 {
+            timer?.invalidate()
+        }
+    }
+    
+    func stopTimer(){
+        timer?.invalidate()
+        countTimer = 0
+    }
+     
     @IBAction func tapedSettingDraw(_ sender: Any) {
         let handlerSelectedColor:(_ color: UIColor, _ width: Float)->Void = { (color ,width) in
             self.canvasView.selectedColor = color
             self.canvasView.selectedWidth = width
         }
         
-        let settingsDrawerViewController = SettingsDrawerViewController.instantiate()
-        settingsDrawerViewController.selectedColor = canvasView.selectedColor
-        settingsDrawerViewController.selectedWidth = canvasView.selectedWidth
-        settingsDrawerViewController.handlerSelectedColor = handlerSelectedColor
-        self.present(settingsDrawerViewController, animated: false, completion: nil)
+        settingsDrawerViewController = SettingsDrawerViewController.instantiate()
+        settingsDrawerViewController?.selectedColor = canvasView.selectedColor
+        settingsDrawerViewController?.selectedWidth = canvasView.selectedWidth
+        settingsDrawerViewController?.handlerSelectedColor = handlerSelectedColor
+        self.present(settingsDrawerViewController!, animated: false, completion: nil)
     }
     
     

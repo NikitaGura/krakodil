@@ -20,4 +20,5 @@ struct Strings {
     static let ROOMS_ROOM_NAME_IS_SMALL = "Room's name is small"
     static let ROOMS_CONNECTED = "Connected"
     static let ROOMS_DISCONNECTED = "Disconnected"
+    static let ROOM_WINNER = "Winner"
 }

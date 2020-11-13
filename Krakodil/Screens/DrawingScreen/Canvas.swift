@@ -29,6 +29,7 @@ class Canvas: UIView{
         drawingViewControllerDelegate?.socketProvider?.onDraw(completion: listenLine)
         drawingViewControllerDelegate?.socketProvider?.onCleanLines(completion: listenClear)
         drawingViewControllerDelegate?.socketProvider?.onOnePlayerLeft(completion: listenOneLeftPlayer)
+        drawingViewControllerDelegate?.socketProvider?.onSendClosePopupSelector(completion: listenClose)
     }
     
     override func draw( _ rect: CGRect){
@@ -84,11 +85,15 @@ class Canvas: UIView{
             drawingViewControllerDelegate?.socketProvider?.emitCleanLines(room: drawingViewControllerDelegate!.room!)
     }
     
-    func listenClear(isClean: Bool){
+    func listenClear(isClean: Bool = true){
         if(isClean){
-            linesPoints.removeAll()
-            setNeedsDisplay()
+            listenClose()
         }
+    }
+    
+    func listenClose(){
+        linesPoints.removeAll()
+        setNeedsDisplay()
     }
     
     func listenLine(line: Line){

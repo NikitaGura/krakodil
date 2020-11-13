@@ -144,5 +144,49 @@ public class SocketProvider{
             }
         }
     }
+    
+    func emitGetWinner(user: User, room: Room, selectWord: String){
+        socket.emit(SocketAPI.event_get_winner, [Naming.user: [Naming.name: user.name, Naming.id_device: user.id_device], Naming.id_room: room.id_room, Naming.select_word: selectWord])
+    }
+    
+    func onSendWinner(completion: @escaping (_ user: WinnerResponse)->()){
+        socket.on(SocketAPI.event_send_winner){ data, ack in
+            let string = data[0] as! String
+            let response = string.data(using: .utf8)!
+            do {
+                let winnerResponse = try JSONDecoder().decode(WinnerResponse.self, from: response)
+                completion(winnerResponse)
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+    }
+    
+    func emitClosePopupSelector(room: Room){
+        socket.emit(SocketAPI.event_close_popup_selector, [Naming.id_room: room.id_room])
+    }
+    
+    func onSendClosePopupSelector(completion: @escaping ()->()){
+        socket.on(SocketAPI.event_send_close_popup_selector){ data, ack in
+            completion()
+        }
+    }
+    
+    func emitMinusGameSecond(seconds: String, room: Room){
+        socket.emit(SocketAPI.event_minus_game_second, [Naming.seconds: seconds, Naming.id_room: room.id_room])
+    }
+    
+    func onSendMinusGameSecond(completion: @escaping (_ seconds: String)->()){
+        socket.on(SocketAPI.event_send_minus_game_second) { data, ack in
+            let string = data[0] as! String
+            let response = string.data(using: .utf8)!
+            do {
+                let secondsResponse = try JSONDecoder().decode(SecondsResponse.self, from: response)
+                completion(secondsResponse.seconds)
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+    }
 }
 

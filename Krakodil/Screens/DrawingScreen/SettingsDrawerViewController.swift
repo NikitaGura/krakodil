@@ -12,6 +12,7 @@ class SettingsDrawerViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var widthSlider: UISlider!
     @IBOutlet weak var colorsCollecntionView: UICollectionView!
+    
     private let arrayColors: Array<UIColor> = [.red, .black, .blue, .brown, .cyan, .orange, .green]
     public var selectedColor: UIColor = .black
     public var selectedWidth: Float = 5

@@ -26,4 +26,6 @@ struct Naming {
     static let data = "data"
     static let line = "line"
     static let message = "message"
+    static let select_word = "select_word"
+    static let seconds = "seconds"
 }

@@ -30,6 +30,8 @@
 		219847AE2371CD380044518C /* ColorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219847AD2371CD380044518C /* ColorApp.swift */; };
 		21A18A1725499E1B00A1681A /* Naming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A18A1625499E1B00A1681A /* Naming.swift */; };
 		21A18A1A2549BEDC00A1681A /* CleanBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A18A192549BEDC00A1681A /* CleanBool.swift */; };
+		21C4982F255EBABD0049263A /* WinnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4982E255EBABD0049263A /* WinnerResponse.swift */; };
+		21C49832255ED6190049263A /* SecondsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C49831255ED6190049263A /* SecondsResponse.swift */; };
 		21DD2F93252F06CC0045EEE4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD2F92252F06CC0045EEE4 /* Strings.swift */; };
 		21DD2F95252F07C30045EEE4 /* CellNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD2F94252F07C30045EEE4 /* CellNames.swift */; };
 		21E07726254B5DD500E87444 /* NameCreateScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E07725254B5DD500E87444 /* NameCreateScreenViewController.swift */; };
@@ -74,6 +76,8 @@
 		219847AD2371CD380044518C /* ColorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorApp.swift; sourceTree = "<group>"; };
 		21A18A1625499E1B00A1681A /* Naming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Naming.swift; sourceTree = "<group>"; };
 		21A18A192549BEDC00A1681A /* CleanBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanBool.swift; sourceTree = "<group>"; };
+		21C4982E255EBABD0049263A /* WinnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerResponse.swift; sourceTree = "<group>"; };
+		21C49831255ED6190049263A /* SecondsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsResponse.swift; sourceTree = "<group>"; };
 		21DD2F92252F06CC0045EEE4 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		21DD2F94252F07C30045EEE4 /* CellNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNames.swift; sourceTree = "<group>"; };
 		21E07725254B5DD500E87444 /* NameCreateScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCreateScreenViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				21ED1E6C25559BEF007F07A6 /* User.swift */,
 				21ED1E8C255AABDB007F07A6 /* Message.swift */,
 				21ED1E97255C14E3007F07A6 /* SelectPainterResponse.swift */,
+				21C4982E255EBABD0049263A /* WinnerResponse.swift */,
+				21C49831255ED6190049263A /* SecondsResponse.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				21122CDE253340560084F812 /* Point.swift in Sources */,
 				21122CD625332A120084F812 /* SocketAPI.swift in Sources */,
 				219847912371C6240044518C /* AppDelegate.swift in Sources */,
+				21C49832255ED6190049263A /* SecondsResponse.swift in Sources */,
 				21ED1E712556BED3007F07A6 /* MapResponse.swift in Sources */,
 				216CEBBB254F32790067DE3A /* ServerAPI.swift in Sources */,
 				21A18A1A2549BEDC00A1681A /* CleanBool.swift in Sources */,
@@ -421,6 +428,7 @@
 				216BE42524FADCA200C16813 /* Line.swift in Sources */,
 				216CEBB5254F312B0067DE3A /* Requests.swift in Sources */,
 				219847A62371C6E30044518C /* Canvas.swift in Sources */,
+				21C4982F255EBABD0049263A /* WinnerResponse.swift in Sources */,
 				21DD2F95252F07C30045EEE4 /* CellNames.swift in Sources */,
 				216CEBAC254EDC6E0067DE3A /* RoomTableViewCell.swift in Sources */,
 				21ED1E8D255AABDB007F07A6 /* Message.swift in Sources */,

@@ -19,4 +19,10 @@ struct SocketAPI {
     static let event_one_player_left = "event_one_player_left"
     static let event_user_connected_to_room = "event_user_connected_to_room"
     static let event_user_leave_from_room = "event_user_leave_from_room"
+    static let event_get_winner = "event_get_winner"
+    static let event_send_winner = "event_send_winner"
+    static let event_close_popup_selector = "event_close_popup_selector"
+    static let event_send_close_popup_selector = "event_send_close_popup_selector"
+    static let event_minus_game_second = "event_minus_game_second"
+    static let event_send_minus_game_second = "event_send_minus_game_second"
 }
