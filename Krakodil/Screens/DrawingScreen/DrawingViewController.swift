@@ -10,7 +10,7 @@ import UIKit
 
 class DrawingViewController: UIViewController, Storyboarded, DrawingViewControllerDelegate {
       
-    let selectWordViewController = SelectWordViewController?
+    let selectWordViewController: SelectWordViewController?
     
     @IBOutlet weak var heightInputChat: NSLayoutConstraint!
     @IBOutlet weak var playersCount: UILabel!
