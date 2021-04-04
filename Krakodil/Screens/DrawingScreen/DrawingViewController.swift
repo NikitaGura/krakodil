@@ -80,8 +80,8 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         socketProvider?.onOnePlayerLeft(completion: listenOnePlayerLeft)
     }
         
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         socketProvider?.emitLeaveRoom(room: room!)
         if (timer != nil) {
             timer?.invalidate()
