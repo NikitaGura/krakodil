@@ -9,6 +9,8 @@
 import UIKit
 
 class DrawingViewController: UIViewController, Storyboarded, DrawingViewControllerDelegate {
+      
+    let selectWordViewController = SelectWordViewController?
     
     @IBOutlet weak var heightInputChat: NSLayoutConstraint!
     @IBOutlet weak var playersCount: UILabel!
@@ -140,7 +142,7 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
     
     func listenWinner(winnerResponse: WinnerResponse){
         stopTimer()
-        let selectWordViewController = SelectWordViewController.instantiate()
+        selectWordViewController = SelectWordViewController.instantiate()
         selectWordViewController.delegateDrawingViewController = self
         selectWordViewController.winner = winnerResponse.user
         selectWordViewController.selectWord = winnerResponse.select_word
