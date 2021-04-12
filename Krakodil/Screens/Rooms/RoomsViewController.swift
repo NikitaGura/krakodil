@@ -96,16 +96,9 @@ extension RoomsViewController: UITableViewDelegate{
                 drawingViewController.room = room
                 drawingViewController.user = self.user
                 self.navigationController?.pushViewController(drawingViewController, animated: true)
-            }else {
-                //TODO popup room is full
             }
-           
-        } errorResponse: {
-            // TODO Analytics
         }
-
-        
-       
+   
     }
 }
 
