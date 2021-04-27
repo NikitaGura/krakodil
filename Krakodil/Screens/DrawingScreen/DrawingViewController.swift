@@ -79,6 +79,11 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         socketProvider?.onOnePlayerLeft(completion: listenOnePlayerLeft)
         socketProvider?.onSendNextPainter(completion: listenNextPainter)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
         
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)

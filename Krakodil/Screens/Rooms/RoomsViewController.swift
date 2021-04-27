@@ -32,6 +32,7 @@ class RoomsViewController: UIViewController, Storyboarded{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         fetchRooms()
     }
     
@@ -49,7 +50,10 @@ class RoomsViewController: UIViewController, Storyboarded{
             self.refreshControl.endRefreshing()
         }
     }
-
+    @IBAction func refreshRoomsAction(_ sender: Any) {
+        fetchRooms()
+    }
+    
     @IBAction func createGame(_ sender: Any) {
         let alert = UIAlertController(title: Strings.ROOMS_GREATE_GAME, message: Strings.ROOMS_NAME, preferredStyle: .alert)
         
@@ -65,6 +69,7 @@ class RoomsViewController: UIViewController, Storyboarded{
                     let drawingViewController = DrawingViewController.instantiate()
                     drawingViewController.socketProvider = self.socketProvider
                     drawingViewController.room = room
+                    drawingViewController.user = self.user
                     self.navigationController?.pushViewController(drawingViewController, animated: true)
                 } errorResponse: {
                    // TODO: Analytics error
