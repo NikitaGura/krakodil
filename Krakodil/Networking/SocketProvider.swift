@@ -188,5 +188,22 @@ public class SocketProvider{
             }
         }
     }
+    
+    func emitNextPainter(user: User, room: Room){
+        socket.emit(SocketAPI.event_next_painter, [Naming.user: [Naming.name: user.name, Naming.id_device: user.id_device], Naming.id_room: room.id_room])
+    }
+    
+    func onSendNextPainter(completion: @escaping (_ nextPainter: NextPainter)->()){
+        socket.on(SocketAPI.event_send_next_painter){ data, ack in
+            let string = data[0] as! String
+            let response = string.data(using: .utf8)!
+            do {
+                let nextPainter = try JSONDecoder().decode(NextPainter.self, from: response)
+                completion(nextPainter)
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+    }
 }
 

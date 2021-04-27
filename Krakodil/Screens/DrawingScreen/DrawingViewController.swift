@@ -52,9 +52,10 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
     var room: Room?
     var messages: [Message] = []
     var settingsDrawerViewController: SettingsDrawerViewController?
+    var selectWordController: SelectWordViewController?
     var timer: Timer?
     
-    var gameDuration = 180
+    var gameDuration = 120
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,14 +77,28 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         socketProvider?.onSendWinner(completion: listenWinner)
         socketProvider?.onSendMinusGameSecond(completion: listenSeconds)
         socketProvider?.onOnePlayerLeft(completion: listenOnePlayerLeft)
+        socketProvider?.onSendNextPainter(completion: listenNextPainter)
     }
         
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         socketProvider?.emitLeaveRoom(room: room!)
-        if (timer != nil) {
-            timer?.invalidate()
+        selectWordController?.stopTimer()
+        selectWordController?.listenClose()
+        stopTimer()
+        if(isPainter && room?.room_users?.count ?? 0 > 1){
+            let indexUser = room?.room_users?.firstIndex(where: {$0.id_device == user?.id_device})
+            let nextIndexUser = ((indexUser ?? 0) + 1) == room?.room_users?.count ? 0 : (indexUser ?? 0) + 1
+            let nextUser = room?.room_users?[nextIndexUser]
+            if( nextUser != nil){
+                socketProvider?.emitNextPainter(user: nextUser!, room: room!)
+           
+            }else{
+                // TODO: Analytics
+            }
         }
+        socketProvider = nil;
+
     }
     
     func showSelectorWords(words: [String]){
@@ -91,6 +106,7 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         let selectWordViewController = SelectWordViewController.instantiate()
         selectWordViewController.delegateDrawingViewController = self
         selectWordViewController.words = words
+        selectWordViewController.startTimer()
         present(selectWordViewController, animated: true, completion: nil)
     }
     
@@ -139,6 +155,7 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
     }
     
     func listenWinner(winnerResponse: WinnerResponse){
+        title = winnerResponse.user.name
         stopTimer()
         let selectWordViewController = SelectWordViewController.instantiate()
         selectWordViewController.delegateDrawingViewController = self
@@ -150,6 +167,7 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         if(winnerResponse.user.id_device == self.user?.id_device){
             isPainter = true
             selectWordViewController.words = winnerResponse.words
+            selectWordViewController.startTimer()
         }else{
             selectWordViewController.isHiddenButtons = true
             isPainter = false
@@ -158,11 +176,29 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
     }
     
     func listenOnePlayerLeft(){
+        stopTimer()
         secondsLeft.text = ""
+        selectWordController?.stopTimer()
+        selectWordController?.listenClose()
+        settingsDrawerViewController?.dismiss(animated: false, completion: nil)
+        selectWordController = nil
     }
     
     func listenSeconds(seconds: String){
         secondsLeft.text = seconds == "0" ? "" : seconds
+    }
+    
+    func listenNextPainter(nextPainter: NextPainter){
+        selectWordController?.listenClose();
+        title = nextPainter.user.name
+        if(nextPainter.user.id_device == user?.id_device){
+            let selectWordViewController = SelectWordViewController.instantiate()
+            selectWordViewController.delegateDrawingViewController = self
+            selectWordViewController.words = nextPainter.words
+            selectWordViewController.isHiddenButtons = false
+            selectWordViewController.startTimer()
+            present(selectWordViewController, animated: true, completion: nil)
+        }
     }
     
     func setLoadedLines(lineResponse: [LineResponse]?){
@@ -181,27 +217,40 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
     @objc func startGameTimer(){
         socketProvider?.emitMinusGameSecond(seconds: String(countTimer), room: room!)
         countTimer -= 1
-        if countTimer == 0 {
+        if countTimer == -1 {
             timer?.invalidate()
+            let indexUser = room?.room_users?.firstIndex(where: {$0.id_device == user?.id_device})
+            let nextIndexUser = ((indexUser ?? 0) + 1) == room?.room_users?.count ? 0 : (indexUser ?? 0) + 1
+            let nextUser = room?.room_users?[nextIndexUser]
+            if( nextUser != nil){
+                socketProvider?.emitNextPainter(user: nextUser!, room: room!)
+           
+            }else{
+                // TODO: Analytics
+            }
+            isPainter = false
         }
     }
     
     func stopTimer(){
         timer?.invalidate()
+        timer = nil
         countTimer = 0
     }
      
     @IBAction func tapedSettingDraw(_ sender: Any) {
-        let handlerSelectedColor:(_ color: UIColor, _ width: Float)->Void = { (color ,width) in
-            self.canvasView.selectedColor = color
-            self.canvasView.selectedWidth = width
+        if (isPainter) {
+            let handlerSelectedColor:(_ color: UIColor, _ width: Float)->Void = { (color ,width) in
+                self.canvasView.selectedColor = color
+                self.canvasView.selectedWidth = width
+            }
+            
+            settingsDrawerViewController = SettingsDrawerViewController.instantiate()
+            settingsDrawerViewController?.selectedColor = canvasView.selectedColor
+            settingsDrawerViewController?.selectedWidth = canvasView.selectedWidth
+            settingsDrawerViewController?.handlerSelectedColor = handlerSelectedColor
+            self.present(settingsDrawerViewController!, animated: false, completion: nil)
         }
-        
-        settingsDrawerViewController = SettingsDrawerViewController.instantiate()
-        settingsDrawerViewController?.selectedColor = canvasView.selectedColor
-        settingsDrawerViewController?.selectedWidth = canvasView.selectedWidth
-        settingsDrawerViewController?.handlerSelectedColor = handlerSelectedColor
-        self.present(settingsDrawerViewController!, animated: false, completion: nil)
     }
     
     

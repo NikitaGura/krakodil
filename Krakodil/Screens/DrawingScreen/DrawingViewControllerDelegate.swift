@@ -14,4 +14,5 @@ protocol DrawingViewControllerDelegate: class{
     var room: Room? {get set}
     var user: User? {get set}
     var socketProvider: SocketProvider? {get set}
+    var selectWordController: SelectWordViewController? {get set}
 }

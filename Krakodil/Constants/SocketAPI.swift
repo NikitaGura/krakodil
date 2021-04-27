@@ -25,4 +25,6 @@ struct SocketAPI {
     static let event_send_close_popup_selector = "event_send_close_popup_selector"
     static let event_minus_game_second = "event_minus_game_second"
     static let event_send_minus_game_second = "event_send_minus_game_second"
+    static let event_next_painter = "event_next_painter"
+    static let event_send_next_painter = "event_send_next_painter"
 }

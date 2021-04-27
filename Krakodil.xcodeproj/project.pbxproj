@@ -32,6 +32,8 @@
 		21A18A1A2549BEDC00A1681A /* CleanBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A18A192549BEDC00A1681A /* CleanBool.swift */; };
 		21C4982F255EBABD0049263A /* WinnerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4982E255EBABD0049263A /* WinnerResponse.swift */; };
 		21C49832255ED6190049263A /* SecondsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C49831255ED6190049263A /* SecondsResponse.swift */; };
+		21C49835255EE8EE0049263A /* NextPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C49834255EE8EE0049263A /* NextPainter.swift */; };
+		21C6E3C326381B3C0072BFB7 /* Adigiana2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21C6E3C226381B2C0072BFB7 /* Adigiana2.ttf */; };
 		21DD2F93252F06CC0045EEE4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD2F92252F06CC0045EEE4 /* Strings.swift */; };
 		21DD2F95252F07C30045EEE4 /* CellNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD2F94252F07C30045EEE4 /* CellNames.swift */; };
 		21E07726254B5DD500E87444 /* NameCreateScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E07725254B5DD500E87444 /* NameCreateScreenViewController.swift */; };
@@ -78,6 +80,8 @@
 		21A18A192549BEDC00A1681A /* CleanBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanBool.swift; sourceTree = "<group>"; };
 		21C4982E255EBABD0049263A /* WinnerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerResponse.swift; sourceTree = "<group>"; };
 		21C49831255ED6190049263A /* SecondsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsResponse.swift; sourceTree = "<group>"; };
+		21C49834255EE8EE0049263A /* NextPainter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPainter.swift; sourceTree = "<group>"; };
+		21C6E3C226381B2C0072BFB7 /* Adigiana2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adigiana2.ttf; sourceTree = "<group>"; };
 		21DD2F92252F06CC0045EEE4 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		21DD2F94252F07C30045EEE4 /* CellNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNames.swift; sourceTree = "<group>"; };
 		21E07725254B5DD500E87444 /* NameCreateScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCreateScreenViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				21ED1E97255C14E3007F07A6 /* SelectPainterResponse.swift */,
 				21C4982E255EBABD0049263A /* WinnerResponse.swift */,
 				21C49831255ED6190049263A /* SecondsResponse.swift */,
+				21C49834255EE8EE0049263A /* NextPainter.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -234,10 +239,19 @@
 		219847A82371CCAF0044518C /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				21C6E3C126381B1C0072BFB7 /* Fonts */,
 				219847AB2371CCE80044518C /* colors.xcassets */,
 				219847AD2371CD380044518C /* ColorApp.swift */,
 			);
 			path = helper;
+			sourceTree = "<group>";
+		};
+		21C6E3C126381B1C0072BFB7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				21C6E3C226381B2C0072BFB7 /* Adigiana2.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		21DD2F91252F06BC0045EEE4 /* Constants */ = {
@@ -347,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				216CEBAD254EDC6E0067DE3A /* RoomTableViewCell.xib in Resources */,
+				21C6E3C326381B3C0072BFB7 /* Adigiana2.ttf in Resources */,
 				219847AC2371CCE80044518C /* colors.xcassets in Resources */,
 				2198479D2371C6260044518C /* LaunchScreen.storyboard in Resources */,
 				2198479A2371C6260044518C /* Assets.xcassets in Resources */,
@@ -437,6 +452,7 @@
 				21122CDA25332D650084F812 /* SocketProvider.swift in Sources */,
 				21ED1E6A25558CDA007F07A6 /* CreateRoomResponse.swift in Sources */,
 				21A18A1725499E1B00A1681A /* Naming.swift in Sources */,
+				21C49835255EE8EE0049263A /* NextPainter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
