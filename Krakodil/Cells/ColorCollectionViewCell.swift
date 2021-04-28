@@ -12,26 +12,25 @@ class ColorCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var imageColor: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        containerView.layer.borderColor = UIColor.black.cgColor
+        containerView.layer.borderColor = UIColor.orange.cgColor
         containerView.layer.cornerRadius = 25
         containerView.layer.masksToBounds = true
         
-        colorView.layer.cornerRadius = 22
-        colorView.layer.borderColor = UIColor.black.cgColor
+        imageColor.image = imageColor.image?.withRenderingMode(.alwaysTemplate)
+        
     }
     
     func setSelected(){
          containerView.layer.borderWidth = 1
-         colorView.layer.borderWidth = 1
     }
     
     func setUnSelected(){
          containerView.layer.borderWidth = 0
-         colorView.layer.borderWidth = 0
     }
     
 

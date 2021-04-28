@@ -78,7 +78,7 @@ extension SettingsDrawerViewController: UICollectionViewDataSource{
             
         }
         
-        cell.colorView.backgroundColor = arrayColors[indexPath.row]
+        cell.imageColor.tintColor = arrayColors[indexPath.row]
         return cell
     }
     
