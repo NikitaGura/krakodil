@@ -13,7 +13,8 @@ extension UIColor {
     struct MyTheme {
         static var grayCanvasColor: UIColor  { return .white  }
         static var backgroundColorApp: UIColor  { return .black  }
-        
+        static var orange_message: UIColor  { return UIColor(named:"orange_message") ?? .black}
+        static var green_message: UIColor  { return UIColor(named:"green_message") ?? .black}
     }
     
     func rgbJSON() -> [String: CGFloat] {

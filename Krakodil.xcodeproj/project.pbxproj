@@ -34,6 +34,7 @@
 		21C49832255ED6190049263A /* SecondsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C49831255ED6190049263A /* SecondsResponse.swift */; };
 		21C49835255EE8EE0049263A /* NextPainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C49834255EE8EE0049263A /* NextPainter.swift */; };
 		21C6E3C326381B3C0072BFB7 /* Adigiana2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21C6E3C226381B2C0072BFB7 /* Adigiana2.ttf */; };
+		21D1F471263ABD7F00FE1AC3 /* AksaraBaliGalang-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21D1F470263ABD7F00FE1AC3 /* AksaraBaliGalang-Regular.ttf */; };
 		21DD2F93252F06CC0045EEE4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD2F92252F06CC0045EEE4 /* Strings.swift */; };
 		21DD2F95252F07C30045EEE4 /* CellNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DD2F94252F07C30045EEE4 /* CellNames.swift */; };
 		21E07726254B5DD500E87444 /* NameCreateScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E07725254B5DD500E87444 /* NameCreateScreenViewController.swift */; };
@@ -82,6 +83,7 @@
 		21C49831255ED6190049263A /* SecondsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsResponse.swift; sourceTree = "<group>"; };
 		21C49834255EE8EE0049263A /* NextPainter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPainter.swift; sourceTree = "<group>"; };
 		21C6E3C226381B2C0072BFB7 /* Adigiana2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adigiana2.ttf; sourceTree = "<group>"; };
+		21D1F470263ABD7F00FE1AC3 /* AksaraBaliGalang-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AksaraBaliGalang-Regular.ttf"; sourceTree = "<group>"; };
 		21DD2F92252F06CC0045EEE4 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		21DD2F94252F07C30045EEE4 /* CellNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNames.swift; sourceTree = "<group>"; };
 		21E07725254B5DD500E87444 /* NameCreateScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCreateScreenViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		21C6E3C126381B1C0072BFB7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				21D1F470263ABD7F00FE1AC3 /* AksaraBaliGalang-Regular.ttf */,
 				21C6E3C226381B2C0072BFB7 /* Adigiana2.ttf */,
 			);
 			path = Fonts;
@@ -363,6 +366,7 @@
 				216CEBAD254EDC6E0067DE3A /* RoomTableViewCell.xib in Resources */,
 				21C6E3C326381B3C0072BFB7 /* Adigiana2.ttf in Resources */,
 				219847AC2371CCE80044518C /* colors.xcassets in Resources */,
+				21D1F471263ABD7F00FE1AC3 /* AksaraBaliGalang-Regular.ttf in Resources */,
 				2198479D2371C6260044518C /* LaunchScreen.storyboard in Resources */,
 				2198479A2371C6260044518C /* Assets.xcassets in Resources */,
 				216BE42224FABB8D00C16813 /* ColorCollectionViewCell.xib in Resources */,

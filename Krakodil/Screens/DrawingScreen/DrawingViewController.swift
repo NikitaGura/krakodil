@@ -81,8 +81,8 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(false)
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
         
     override func viewDidDisappear(_ animated: Bool) {
@@ -91,7 +91,7 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         selectWordController?.stopTimer()
         selectWordController?.listenClose()
         stopTimer()
-        if(isPainter && room?.room_users?.count ?? 0 > 1){
+        if(isPainter && (room?.room_users?.count ?? 0 ) - 1 > 1){
             let indexUser = room?.room_users?.firstIndex(where: {$0.id_device == user?.id_device})
             let nextIndexUser = ((indexUser ?? 0) + 1) == room?.room_users?.count ? 0 : (indexUser ?? 0) + 1
             let nextUser = room?.room_users?[nextIndexUser]
@@ -187,6 +187,7 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         selectWordController?.listenClose()
         settingsDrawerViewController?.dismiss(animated: false, completion: nil)
         selectWordController = nil
+        isPainter = false
     }
     
     func listenSeconds(seconds: String){
@@ -242,7 +243,10 @@ class DrawingViewController: UIViewController, Storyboarded, DrawingViewControll
         timer = nil
         countTimer = 0
     }
-     
+    @IBAction func goBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func tapedSettingDraw(_ sender: Any) {
         if (isPainter) {
             let handlerSelectedColor:(_ color: UIColor, _ width: Float)->Void = { (color ,width) in
@@ -295,6 +299,7 @@ extension DrawingViewController: UITableViewDataSource {
          let cell = messagesTableView.dequeueReusableCell(withIdentifier: CellNames.messageTableViewCell) as! MessageTableViewCell
         cell.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi));
         cell.message = messages[indexPath.row]
+        cell.user = self.user
         return cell
     }
 }
