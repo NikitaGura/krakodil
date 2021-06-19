@@ -29,6 +29,9 @@ class SelectWordViewController: UIViewController, Storyboarded {
     }
     var waiting = 20
     
+    @IBOutlet weak var secondImage: UIImageView!
+    @IBOutlet weak var firstImage: UIImageView!
+    @IBOutlet weak var thirdImage: UIImageView!
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var firstButton: UIButton!
@@ -64,6 +67,9 @@ class SelectWordViewController: UIViewController, Storyboarded {
         firstButton.isHidden = hidden
         secondButton.isHidden = hidden
         thirdButton.isHidden = hidden
+        firstImage.isHidden = hidden
+        secondImage.isHidden = hidden
+        thirdImage.isHidden = hidden
     }
     
     @objc func startWait(){

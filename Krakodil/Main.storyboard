@@ -30,14 +30,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_button" translatesAutoresizingMaskIntoConstraints="NO" id="Mrn-Dl-7HD">
-                                <rect key="frame" x="58.5" y="262.5" width="258" height="109"/>
+                                <rect key="frame" x="58.5" y="261.5" width="258" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="258" id="2DM-Zn-MwA"/>
                                     <constraint firstAttribute="height" constant="109" id="AAS-YQ-2WX"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBk-ef-Iu9">
-                                <rect key="frame" x="87.5" y="292.5" width="200" height="50"/>
+                                <rect key="frame" x="87.5" y="291.5" width="200" height="50"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="XUm-zu-mcx"/>
@@ -48,13 +48,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE NAME:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc5-h6-Fis">
-                                <rect key="frame" x="101.5" y="229.5" width="172.5" height="28"/>
+                                <rect key="frame" x="111.5" y="231" width="152.5" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4q-2v-ZZO">
-                                <rect key="frame" x="82.5" y="399.5" width="210" height="80"/>
+                                <rect key="frame" x="82.5" y="398.5" width="210" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="b4A-Ah-Tc4"/>
                                     <constraint firstAttribute="height" constant="80" id="dR1-j4-xPT"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhP-YJ-Dbd">
-                                <rect key="frame" x="146" y="404" width="103.5" height="56"/>
+                                <rect key="frame" x="146" y="408.5" width="91.5" height="50.5"/>
                                 <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,13 +112,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NickName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO1-al-rfl">
-                                <rect key="frame" x="101.5" y="45" width="172.5" height="43.5"/>
+                                <rect key="frame" x="121" y="45" width="133.5" height="39"/>
                                 <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icx-65-H7H">
-                                <rect key="frame" x="50" y="114.5" width="275" height="70"/>
+                                <rect key="frame" x="50" y="110" width="275" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="R7P-bd-n1t"/>
                                 </constraints>
@@ -129,7 +129,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="10G-13-P67">
-                                <rect key="frame" x="50" y="199.5" width="275" height="467.5"/>
+                                <rect key="frame" x="50" y="195" width="275" height="472"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="dk7-zx-fgT" id="0ZZ-YF-bGu"/>
@@ -137,7 +137,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE GAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AU2-PS-4wI">
-                                <rect key="frame" x="49" y="126" width="277.5" height="47"/>
+                                <rect key="frame" x="63" y="124" width="249" height="42"/>
                                 <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -195,14 +195,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMq-Ue-08f">
+                                <rect key="frame" x="16" y="25" width="343" height="492"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_button" translatesAutoresizingMaskIntoConstraints="NO" id="ja7-Wo-WdC">
+                                <rect key="frame" x="58" y="375" width="258" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="258" id="xDP-MK-nfB"/>
+                                    <constraint firstAttribute="height" constant="109" id="ymk-VN-8cw"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_button" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-DO-11i">
+                                <rect key="frame" x="58" y="189" width="258" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="258" id="iJl-c5-ZXF"/>
+                                    <constraint firstAttribute="height" constant="109" id="iVa-2r-20w"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_button" translatesAutoresizingMaskIntoConstraints="NO" id="tPc-GP-J8s">
+                                <rect key="frame" x="58" y="279" width="258" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="0ge-1n-pNW"/>
+                                    <constraint firstAttribute="width" constant="258" id="vGm-Kw-MfY"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DD2-af-ZF9">
                                 <rect key="frame" x="50" y="206" width="275" height="65"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="wQb-oj-GHC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="tintColor" red="1" green="0.16078431369999999" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="40"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="firstSelect:" destination="g51-2o-qsT" eventType="touchUpInside" id="AKF-kX-se7"/>
@@ -210,12 +239,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU0-c2-Lea">
                                 <rect key="frame" x="50" y="301" width="275" height="65"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="hGw-U4-HyQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="tintColor" red="1" green="0.16078431369999999" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="40"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="secondSelect:" destination="g51-2o-qsT" eventType="touchUpInside" id="26f-Yx-Whn"/>
@@ -223,32 +251,31 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0N-hR-LIp">
                                 <rect key="frame" x="50" y="396" width="275" height="65"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="3eB-cM-P6q"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="tintColor" red="1" green="0.16078431369999999" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="40"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="thirdSelect:" destination="g51-2o-qsT" eventType="touchUpInside" id="ZwU-5h-SPl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner: Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Erb-np-Iv9">
-                                <rect key="frame" x="111" y="104" width="153" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Winner: Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Erb-np-Iv9">
+                                <rect key="frame" x="107" y="87.5" width="161" height="34.5"/>
+                                <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbC-Kn-vgR">
-                                <rect key="frame" x="163.5" y="154" width="48" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbC-Kn-vgR">
+                                <rect key="frame" x="157" y="142" width="61.5" height="39"/>
+                                <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRA-dG-eCs">
-                                <rect key="frame" x="176" y="60" width="23.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="173" y="25" width="29.5" height="42.5"/>
+                                <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -257,27 +284,44 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10458846830985916" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="nRA-dG-eCs" firstAttribute="centerX" secondItem="ycQ-vq-lpf" secondAttribute="centerX" id="4qm-3l-bFQ"/>
+                            <constraint firstItem="ja7-Wo-WdC" firstAttribute="top" secondItem="bU0-c2-Lea" secondAttribute="bottom" constant="9" id="7DS-QT-Lzw"/>
+                            <constraint firstItem="B7p-Rr-7qc" firstAttribute="trailing" secondItem="eRD-DO-11i" secondAttribute="trailing" constant="59" id="7U2-QB-4a3"/>
                             <constraint firstItem="B7p-Rr-7qc" firstAttribute="trailing" secondItem="DD2-af-ZF9" secondAttribute="trailing" constant="50" id="95x-sm-QQG"/>
                             <constraint firstItem="Erb-np-Iv9" firstAttribute="centerX" secondItem="ycQ-vq-lpf" secondAttribute="centerX" id="9of-gR-X0j"/>
                             <constraint firstItem="TbC-Kn-vgR" firstAttribute="centerX" secondItem="ycQ-vq-lpf" secondAttribute="centerX" id="9vH-ca-RM4"/>
                             <constraint firstItem="bU0-c2-Lea" firstAttribute="leading" secondItem="B7p-Rr-7qc" secondAttribute="leading" constant="50" id="AuV-Mt-kxx"/>
-                            <constraint firstItem="B7p-Rr-7qc" firstAttribute="trailing" secondItem="f0N-hR-LIp" secondAttribute="trailing" constant="50" id="FnK-Ye-VIv"/>
+                            <constraint firstItem="B7p-Rr-7qc" firstAttribute="bottom" secondItem="XMq-Ue-08f" secondAttribute="bottom" constant="150" id="K7D-1g-Pfr"/>
                             <constraint firstItem="Erb-np-Iv9" firstAttribute="top" secondItem="nRA-dG-eCs" secondAttribute="bottom" constant="20" id="MAJ-Ky-gXd"/>
+                            <constraint firstItem="B7p-Rr-7qc" firstAttribute="trailing" secondItem="f0N-hR-LIp" secondAttribute="trailing" constant="50" id="OTd-hj-2Aa"/>
+                            <constraint firstItem="eRD-DO-11i" firstAttribute="leading" secondItem="B7p-Rr-7qc" secondAttribute="leading" constant="58" id="PIR-fN-PDz"/>
+                            <constraint firstItem="B7p-Rr-7qc" firstAttribute="trailing" secondItem="tPc-GP-J8s" secondAttribute="trailing" constant="59" id="Rje-Iu-uGD"/>
                             <constraint firstItem="bU0-c2-Lea" firstAttribute="top" secondItem="DD2-af-ZF9" secondAttribute="bottom" constant="30" id="Rug-uT-B8Q"/>
+                            <constraint firstItem="XMq-Ue-08f" firstAttribute="top" secondItem="B7p-Rr-7qc" secondAttribute="top" constant="25" id="TfY-1b-rRa"/>
+                            <constraint firstItem="tPc-GP-J8s" firstAttribute="top" secondItem="DD2-af-ZF9" secondAttribute="bottom" constant="8" id="UtU-Hx-wUE"/>
+                            <constraint firstItem="tPc-GP-J8s" firstAttribute="leading" secondItem="B7p-Rr-7qc" secondAttribute="leading" constant="58" id="VKg-UN-Wy1"/>
                             <constraint firstItem="DD2-af-ZF9" firstAttribute="leading" secondItem="B7p-Rr-7qc" secondAttribute="leading" constant="50" id="cjj-Xj-vLm"/>
                             <constraint firstItem="B7p-Rr-7qc" firstAttribute="trailing" secondItem="bU0-c2-Lea" secondAttribute="trailing" constant="50" id="d29-PS-oso"/>
+                            <constraint firstItem="B7p-Rr-7qc" firstAttribute="trailing" secondItem="XMq-Ue-08f" secondAttribute="trailing" constant="16" id="eBv-cf-RTb"/>
+                            <constraint firstItem="B7p-Rr-7qc" firstAttribute="trailing" secondItem="ja7-Wo-WdC" secondAttribute="trailing" constant="59" id="hOy-Ov-V7S"/>
                             <constraint firstItem="f0N-hR-LIp" firstAttribute="leading" secondItem="B7p-Rr-7qc" secondAttribute="leading" constant="50" id="lIT-uR-M3w"/>
+                            <constraint firstItem="XMq-Ue-08f" firstAttribute="leading" secondItem="B7p-Rr-7qc" secondAttribute="leading" constant="16" id="mCj-Oz-YP9"/>
                             <constraint firstItem="DD2-af-ZF9" firstAttribute="top" secondItem="TbC-Kn-vgR" secondAttribute="bottom" constant="25" id="n9w-c4-7rj"/>
                             <constraint firstItem="TbC-Kn-vgR" firstAttribute="top" secondItem="Erb-np-Iv9" secondAttribute="bottom" constant="20" id="orA-Ug-Jfh"/>
+                            <constraint firstItem="eRD-DO-11i" firstAttribute="top" secondItem="TbC-Kn-vgR" secondAttribute="bottom" constant="8" id="pCT-h1-xB2"/>
                             <constraint firstItem="bU0-c2-Lea" firstAttribute="centerY" secondItem="ycQ-vq-lpf" secondAttribute="centerY" id="sd2-pL-2zU"/>
+                            <constraint firstItem="ja7-Wo-WdC" firstAttribute="leading" secondItem="B7p-Rr-7qc" secondAttribute="leading" constant="58" id="txn-rt-jGg"/>
+                            <constraint firstItem="nRA-dG-eCs" firstAttribute="top" secondItem="XMq-Ue-08f" secondAttribute="top" id="wAT-gx-jtv"/>
                             <constraint firstItem="f0N-hR-LIp" firstAttribute="top" secondItem="bU0-c2-Lea" secondAttribute="bottom" constant="30" id="zJz-bm-n9V"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="firstButton" destination="DD2-af-ZF9" id="sZZ-1Y-pNd"/>
+                        <outlet property="firstImage" destination="eRD-DO-11i" id="1UG-9z-B1y"/>
                         <outlet property="leftSeconds" destination="nRA-dG-eCs" id="hkt-SF-e5I"/>
                         <outlet property="secondButton" destination="bU0-c2-Lea" id="XOh-s9-lwx"/>
+                        <outlet property="secondImage" destination="tPc-GP-J8s" id="DFE-7r-ESq"/>
                         <outlet property="thirdButton" destination="f0N-hR-LIp" id="psg-CX-TQO"/>
+                        <outlet property="thirdImage" destination="ja7-Wo-WdC" id="8PW-Z7-EtH"/>
                         <outlet property="winnerLabel" destination="Erb-np-Iv9" id="ZUo-bo-AyA"/>
                         <outlet property="wordLabel" destination="TbC-Kn-vgR" id="8Pa-YR-kTk"/>
                     </connections>
@@ -319,7 +363,7 @@
                                         <rect key="frame" x="3" y="0.0" width="279" height="46"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-dy-lmC">
-                                        <rect key="frame" x="20" y="14.5" width="250" height="19"/>
+                                        <rect key="frame" x="20" y="3.5" width="250" height="41"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="AksaraBaliGalang-Regular" family="Aksara Bali Galang" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -350,18 +394,18 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuA-TM-Qoz">
-                                <rect key="frame" x="318.5" y="30.5" width="36.5" height="29.5"/>
+                                <rect key="frame" x="314.5" y="33.5" width="40.5" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SelectWord" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJC-hP-3kS">
-                                <rect key="frame" x="0.0" y="30.5" width="375" height="29.5"/>
+                                <rect key="frame" x="0.0" y="33.5" width="375" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="25"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="0.1045884683" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJQ-fK-leD">
-                                <rect key="frame" x="10" y="30.5" width="42" height="29.5"/>
+                                <rect key="frame" x="10" y="33.5" width="34.5" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -531,13 +575,13 @@
                                         <color key="tintColor" red="1" green="0.47843137254901957" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CANSEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7N-sm-Opr">
-                                        <rect key="frame" x="49.5" y="177.5" width="66.5" height="20"/>
+                                        <rect key="frame" x="54" y="178.5" width="57" height="18"/>
                                         <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCEPT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bof-Z6-rCU">
-                                        <rect key="frame" x="189" y="177.5" width="67" height="20"/>
+                                        <rect key="frame" x="193" y="178.5" width="59" height="18"/>
                                         <fontDescription key="fontDescription" name="Adigiana2" family="Adigiana 2" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -605,9 +649,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
